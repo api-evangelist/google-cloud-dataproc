@@ -1,0 +1,54 @@
+name: Google Cloud Dataproc
+description: >-
+  Google Cloud Dataproc is a fully managed and highly scalable service for running
+  Apache Spark, Apache Hadoop, Apache Flink, Presto, and other open-source data
+  processing frameworks. It enables batch processing, querying, streaming, and
+  machine learning use cases with cluster management that takes seconds instead of
+  minutes, along with per-second billing and autoscaling capabilities.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/google-cloud-dataproc/refs/heads/main/apis.yml
+created: '2026-03-13'
+modified: '2026-03-13'
+specificationVersion: '0.18'
+tags:
+- Big Data
+- Hadoop
+- Spark
+- Data Processing
+- Google Cloud
+apis:
+- name: Cloud Dataproc API
+  description: >-
+    The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud.
+    It provides programmatic access to create, configure, and delete clusters,
+    submit and monitor Apache Spark, Hadoop, Hive, and Pig jobs, and manage
+    workflow templates for orchestrating multi-step data processing pipelines.
+    The API supports autoscaling policies, optional components, and integration
+    with other Google Cloud services.
+  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://cloud.google.com/dataproc/docs
+  baseURL: https://dataproc.googleapis.com/v1
+  tags:
+  - Clusters
+  - Jobs
+  - Spark
+  - Hadoop
+  properties:
+  - type: Documentation
+    url: https://cloud.google.com/dataproc/docs/reference/rest
+  - type: OpenAPI
+    url: openapi/cloud-dataproc-openapi.yml
+  - type: JSONSchema
+    url: json-schema/cluster-schema.json
+common:
+- type: GettingStarted
+  url: https://cloud.google.com/dataproc/docs/quickstarts
+- type: Pricing
+  url: https://cloud.google.com/dataproc/pricing
+- type: Authentication
+  url: https://cloud.google.com/dataproc/docs/concepts/iam
+- type: JSON-LD
+  url: json-ld/google-cloud-dataproc-context.jsonld
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

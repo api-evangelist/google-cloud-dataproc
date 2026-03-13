@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "dataproc": "https://cloud.google.com/dataproc/docs/reference/rest/v1/",
+    "gcloud": "https://cloud.google.com/apis/",
+    "Cluster": "dataproc:projects.regions.clusters",
+    "Job": "dataproc:projects.regions.jobs",
+    "WorkflowTemplate": "dataproc:projects.regions.workflowTemplates",
+    "Operation": "dataproc:projects.regions.operations",
+    "clusterName": "schema:name",
+    "description": "schema:description",
+    "state": "dataproc:state",
+    "projectId": "gcloud:project",
+    "labels": "schema:keywords",
+    "createTime": "schema:dateCreated",
+    "updateTime": "schema:dateModified",
+    "region": "schema:location",
+    "machineTypeUri": "dataproc:machineType",
+    "numInstances": "dataproc:numInstances",
+    "imageVersion": "schema:softwareVersion",
+    "clusterUuid": "schema:identifier",
+    "jobId": "schema:identifier",
+    "sparkJob": "dataproc:sparkJob",
+    "hadoopJob": "dataproc:hadoopJob",
+    "pysparkJob": "dataproc:pysparkJob",
+    "hiveJob": "dataproc:hiveJob"
+  }
+}
