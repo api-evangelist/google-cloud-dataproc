@@ -1,3 +1,4 @@
+aid: google-cloud-dataproc
 name: Google Cloud Dataproc
 description: >-
   Google Cloud Dataproc is a fully managed and highly scalable service for running
@@ -8,8 +9,9 @@ description: >-
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-dataproc/refs/heads/main/apis.yml
 created: '2026-03-13'
-modified: '2026-03-13'
-specificationVersion: '0.18'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+type: Index
 tags:
 - Big Data
 - Hadoop
@@ -38,15 +40,31 @@ apis:
     url: https://cloud.google.com/dataproc/docs/reference/rest
   - type: OpenAPI
     url: openapi/cloud-dataproc-openapi.yml
+  - type: Authentication
+    url: https://cloud.google.com/dataproc/docs/concepts/iam
+  - type: Getting Started
+    url: https://cloud.google.com/dataproc/docs/quickstarts
   - type: JSONSchema
     url: json-schema/cluster-schema.json
 common:
-- type: GettingStarted
+- type: Portal
+  url: https://cloud.google.com/dataproc
+- type: Getting Started
   url: https://cloud.google.com/dataproc/docs/quickstarts
-- type: Pricing
-  url: https://cloud.google.com/dataproc/pricing
+- type: Documentation
+  url: https://cloud.google.com/dataproc/docs
 - type: Authentication
   url: https://cloud.google.com/dataproc/docs/concepts/iam
+- type: Pricing
+  url: https://cloud.google.com/dataproc/pricing
+- type: Terms of Service
+  url: https://cloud.google.com/terms
+- type: Privacy Policy
+  url: https://policies.google.com/privacy
+- type: Status
+  url: https://status.cloud.google.com/
+- type: Support
+  url: https://cloud.google.com/dataproc/docs/support
 - type: JSON-LD
   url: json-ld/google-cloud-dataproc-context.jsonld
 maintainers:
