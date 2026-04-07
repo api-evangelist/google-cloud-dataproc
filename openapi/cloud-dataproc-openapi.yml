@@ -29,7 +29,7 @@ paths:
     get:
       tags:
         - Clusters
-      summary: List clusters
+      summary: Google Cloud Dataproc List clusters
       description: Lists all regions/{region}/clusters in a project.
       operationId: listClusters
       parameters:
@@ -68,7 +68,7 @@ paths:
     post:
       tags:
         - Clusters
-      summary: Create a cluster
+      summary: Google Cloud Dataproc Create a cluster
       description: Creates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata.
       operationId: createCluster
       parameters:
@@ -102,7 +102,7 @@ paths:
     get:
       tags:
         - Clusters
-      summary: Get a cluster
+      summary: Google Cloud Dataproc Get a cluster
       description: Gets the resource representation for a cluster in a project.
       operationId: getCluster
       parameters:
@@ -134,7 +134,7 @@ paths:
     patch:
       tags:
         - Clusters
-      summary: Update a cluster
+      summary: Google Cloud Dataproc Update a cluster
       description: Updates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata.
       operationId: updateCluster
       parameters:
@@ -177,7 +177,7 @@ paths:
     delete:
       tags:
         - Clusters
-      summary: Delete a cluster
+      summary: Google Cloud Dataproc Delete a cluster
       description: Deletes a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata.
       operationId: deleteCluster
       parameters:
@@ -210,7 +210,7 @@ paths:
     get:
       tags:
         - Jobs
-      summary: List jobs
+      summary: Google Cloud Dataproc List jobs
       description: Lists regions/{region}/jobs in a project.
       operationId: listJobs
       parameters:
@@ -258,7 +258,7 @@ paths:
     post:
       tags:
         - Jobs
-      summary: Submit a job
+      summary: Google Cloud Dataproc Submit a job
       description: Submits a job to a cluster.
       operationId: submitJob
       parameters:
@@ -292,7 +292,7 @@ paths:
     get:
       tags:
         - Jobs
-      summary: Get a job
+      summary: Google Cloud Dataproc Get a job
       description: Gets the resource representation for a job in a project.
       operationId: getJob
       parameters:
@@ -324,7 +324,7 @@ paths:
     delete:
       tags:
         - Jobs
-      summary: Delete a job
+      summary: Google Cloud Dataproc Delete a job
       description: Deletes the job from the project. After deletion, the job metadata is not retrievable.
       operationId: deleteJob
       parameters:
@@ -353,7 +353,7 @@ paths:
     post:
       tags:
         - Jobs
-      summary: Cancel a job
+      summary: Google Cloud Dataproc Cancel a job
       description: Starts a job cancellation request.
       operationId: cancelJob
       parameters:
@@ -386,7 +386,7 @@ paths:
     get:
       tags:
         - WorkflowTemplates
-      summary: List workflow templates
+      summary: Google Cloud Dataproc List workflow templates
       description: Lists workflows that match the specified filter in the request.
       operationId: listWorkflowTemplates
       parameters:
@@ -421,7 +421,7 @@ paths:
     post:
       tags:
         - WorkflowTemplates
-      summary: Create a workflow template
+      summary: Google Cloud Dataproc Create a workflow template
       description: Creates new workflow template.
       operationId: createWorkflowTemplate
       parameters:
