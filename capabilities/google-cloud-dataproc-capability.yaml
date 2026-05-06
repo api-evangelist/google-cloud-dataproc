@@ -1,0 +1,816 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Dataproc API
+  description: The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud Platform. It provides programmatic
+    access to create and manage clusters, submit and monitor Apache Spark, Apache Hadoop, Apache Hive, and Apache Pig jobs,
+    and manage workflow templates for orchestrating multi-step data processing pipelines.
+  tags:
+  - Google
+  - Cloud
+  - Dataproc
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-dataproc
+    baseUri: https://dataproc.googleapis.com/v1
+    description: Google Cloud Dataproc API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{GOOGLE_CLOUD_DATAPROC_TOKEN}}'
+    resources:
+    - name: projects-project-regions-region-clusters
+      path: /projects/{project}/regions/{region}/clusters
+      operations:
+      - name: listclusters
+        method: GET
+        description: Google Cloud Dataproc List clusters
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: filter
+          in: query
+          type: string
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcluster
+        method: POST
+        description: Google Cloud Dataproc Create a cluster
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-project-regions-region-clusters-cluster
+      path: /projects/{project}/regions/{region}/clusters/{cluster}
+      operations:
+      - name: getcluster
+        method: GET
+        description: Google Cloud Dataproc Get a cluster
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: cluster
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatecluster
+        method: PATCH
+        description: Google Cloud Dataproc Update a cluster
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: cluster
+          in: path
+          type: string
+          required: true
+        - name: updateMask
+          in: query
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletecluster
+        method: DELETE
+        description: Google Cloud Dataproc Delete a cluster
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: cluster
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-project-regions-region-jobs
+      path: /projects/{project}/regions/{region}/jobs
+      operations:
+      - name: listjobs
+        method: GET
+        description: Google Cloud Dataproc List jobs
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        - name: clusterName
+          in: query
+          type: string
+        - name: jobStateMatcher
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-project-regions-region-jobs-submit
+      path: /projects/{project}/regions/{region}/jobs:submit
+      operations:
+      - name: submitjob
+        method: POST
+        description: Google Cloud Dataproc Submit a job
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-project-regions-region-jobs-jobid
+      path: /projects/{project}/regions/{region}/jobs/{jobId}
+      operations:
+      - name: getjob
+        method: GET
+        description: Google Cloud Dataproc Get a job
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletejob
+        method: DELETE
+        description: Google Cloud Dataproc Delete a job
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-project-regions-region-jobs-jobid-cance
+      path: /projects/{project}/regions/{region}/jobs/{jobId}:cancel
+      operations:
+      - name: canceljob
+        method: POST
+        description: Google Cloud Dataproc Cancel a job
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-project-regions-region-workflowtemplate
+      path: /projects/{project}/regions/{region}/workflowTemplates
+      operations:
+      - name: listworkflowtemplates
+        method: GET
+        description: Google Cloud Dataproc List workflow templates
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createworkflowtemplate
+        method: POST
+        description: Google Cloud Dataproc Create a workflow template
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-cloud-dataproc-rest
+    description: REST adapter for Google Cloud Dataproc API.
+    resources:
+    - path: /projects/{project}/regions/{region}/clusters
+      name: listclusters
+      operations:
+      - method: GET
+        name: listclusters
+        description: Google Cloud Dataproc List clusters
+        call: google-cloud-dataproc.listclusters
+        with:
+          project: rest.project
+          region: rest.region
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/regions/{region}/clusters
+      name: createcluster
+      operations:
+      - method: POST
+        name: createcluster
+        description: Google Cloud Dataproc Create a cluster
+        call: google-cloud-dataproc.createcluster
+        with:
+          project: rest.project
+          region: rest.region
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/regions/{region}/clusters/{cluster}
+      name: getcluster
+      operations:
+      - method: GET
+        name: getcluster
+        description: Google Cloud Dataproc Get a cluster
+        call: google-cloud-dataproc.getcluster
+        with:
+          project: rest.project
+          region: rest.region
+          cluster: rest.cluster
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/regions/{region}/clusters/{cluster}
+      name: updatecluster
+      operations:
+      - method: PATCH
+        name: updatecluster
+        description: Google Cloud Dataproc Update a cluster
+        call: google-cloud-dataproc.updatecluster
+        with:
+          project: rest.project
+          region: rest.region
+          cluster: rest.cluster
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/regions/{region}/clusters/{cluster}
+      name: deletecluster
+      operations:
+      - method: DELETE
+        name: deletecluster
+        description: Google Cloud Dataproc Delete a cluster
+        call: google-cloud-dataproc.deletecluster
+        with:
+          project: rest.project
+          region: rest.region
+          cluster: rest.cluster
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/regions/{region}/jobs
+      name: listjobs
+      operations:
+      - method: GET
+        name: listjobs
+        description: Google Cloud Dataproc List jobs
+        call: google-cloud-dataproc.listjobs
+        with:
+          project: rest.project
+          region: rest.region
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/regions/{region}/jobs:submit
+      name: submitjob
+      operations:
+      - method: POST
+        name: submitjob
+        description: Google Cloud Dataproc Submit a job
+        call: google-cloud-dataproc.submitjob
+        with:
+          project: rest.project
+          region: rest.region
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/regions/{region}/jobs/{jobId}
+      name: getjob
+      operations:
+      - method: GET
+        name: getjob
+        description: Google Cloud Dataproc Get a job
+        call: google-cloud-dataproc.getjob
+        with:
+          project: rest.project
+          region: rest.region
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/regions/{region}/jobs/{jobId}
+      name: deletejob
+      operations:
+      - method: DELETE
+        name: deletejob
+        description: Google Cloud Dataproc Delete a job
+        call: google-cloud-dataproc.deletejob
+        with:
+          project: rest.project
+          region: rest.region
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/regions/{region}/jobs/{jobId}:cancel
+      name: canceljob
+      operations:
+      - method: POST
+        name: canceljob
+        description: Google Cloud Dataproc Cancel a job
+        call: google-cloud-dataproc.canceljob
+        with:
+          project: rest.project
+          region: rest.region
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/regions/{region}/workflowTemplates
+      name: listworkflowtemplates
+      operations:
+      - method: GET
+        name: listworkflowtemplates
+        description: Google Cloud Dataproc List workflow templates
+        call: google-cloud-dataproc.listworkflowtemplates
+        with:
+          project: rest.project
+          region: rest.region
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/regions/{region}/workflowTemplates
+      name: createworkflowtemplate
+      operations:
+      - method: POST
+        name: createworkflowtemplate
+        description: Google Cloud Dataproc Create a workflow template
+        call: google-cloud-dataproc.createworkflowtemplate
+        with:
+          project: rest.project
+          region: rest.region
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-cloud-dataproc-mcp
+    transport: http
+    description: MCP adapter for Google Cloud Dataproc API for AI agent use.
+    tools:
+    - name: listclusters
+      description: Google Cloud Dataproc List clusters
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-dataproc.listclusters
+      with:
+        project: tools.project
+        region: tools.region
+        filter: tools.filter
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: region
+        type: string
+        description: region
+        required: true
+      - name: filter
+        type: string
+        description: filter
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcluster
+      description: Google Cloud Dataproc Create a cluster
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-dataproc.createcluster
+      with:
+        project: tools.project
+        region: tools.region
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: region
+        type: string
+        description: region
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcluster
+      description: Google Cloud Dataproc Get a cluster
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-dataproc.getcluster
+      with:
+        project: tools.project
+        region: tools.region
+        cluster: tools.cluster
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: region
+        type: string
+        description: region
+        required: true
+      - name: cluster
+        type: string
+        description: cluster
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updatecluster
+      description: Google Cloud Dataproc Update a cluster
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-dataproc.updatecluster
+      with:
+        project: tools.project
+        region: tools.region
+        cluster: tools.cluster
+        updateMask: tools.updateMask
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: region
+        type: string
+        description: region
+        required: true
+      - name: cluster
+        type: string
+        description: cluster
+        required: true
+      - name: updateMask
+        type: string
+        description: updateMask
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletecluster
+      description: Google Cloud Dataproc Delete a cluster
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-cloud-dataproc.deletecluster
+      with:
+        project: tools.project
+        region: tools.region
+        cluster: tools.cluster
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: region
+        type: string
+        description: region
+        required: true
+      - name: cluster
+        type: string
+        description: cluster
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listjobs
+      description: Google Cloud Dataproc List jobs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-dataproc.listjobs
+      with:
+        project: tools.project
+        region: tools.region
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+        clusterName: tools.clusterName
+        jobStateMatcher: tools.jobStateMatcher
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: region
+        type: string
+        description: region
+        required: true
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      - name: clusterName
+        type: string
+        description: clusterName
+      - name: jobStateMatcher
+        type: string
+        description: jobStateMatcher
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: submitjob
+      description: Google Cloud Dataproc Submit a job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-dataproc.submitjob
+      with:
+        project: tools.project
+        region: tools.region
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: region
+        type: string
+        description: region
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getjob
+      description: Google Cloud Dataproc Get a job
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-dataproc.getjob
+      with:
+        project: tools.project
+        region: tools.region
+        jobId: tools.jobId
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: region
+        type: string
+        description: region
+        required: true
+      - name: jobId
+        type: string
+        description: jobId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletejob
+      description: Google Cloud Dataproc Delete a job
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-cloud-dataproc.deletejob
+      with:
+        project: tools.project
+        region: tools.region
+        jobId: tools.jobId
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: region
+        type: string
+        description: region
+        required: true
+      - name: jobId
+        type: string
+        description: jobId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: canceljob
+      description: Google Cloud Dataproc Cancel a job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-dataproc.canceljob
+      with:
+        project: tools.project
+        region: tools.region
+        jobId: tools.jobId
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: region
+        type: string
+        description: region
+        required: true
+      - name: jobId
+        type: string
+        description: jobId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listworkflowtemplates
+      description: Google Cloud Dataproc List workflow templates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-dataproc.listworkflowtemplates
+      with:
+        project: tools.project
+        region: tools.region
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: region
+        type: string
+        description: region
+        required: true
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createworkflowtemplate
+      description: Google Cloud Dataproc Create a workflow template
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-dataproc.createworkflowtemplate
+      with:
+        project: tools.project
+        region: tools.region
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: region
+        type: string
+        description: region
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_DATAPROC_TOKEN: GOOGLE_CLOUD_DATAPROC_TOKEN
