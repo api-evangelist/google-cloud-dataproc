@@ -1,0 +1,142 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Dataproc API — WorkflowTemplates
+  description: 'Google Cloud Dataproc API — WorkflowTemplates. 2 operations. Lead operation: Google Cloud Dataproc List workflow
+    templates. Self-contained Naftiko capability covering one Google Cloud Dataproc business surface.'
+  tags:
+  - Google Cloud Dataproc
+  - WorkflowTemplates
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_DATAPROC_API_KEY: GOOGLE_CLOUD_DATAPROC_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: cloud-dataproc-workflowtemplates
+    baseUri: https://dataproc.googleapis.com/v1
+    description: Google Cloud Dataproc API — WorkflowTemplates business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-project-regions-region-workflowTemplates
+      path: /projects/{project}/regions/{region}/workflowTemplates
+      operations:
+      - name: listworkflowtemplates
+        method: GET
+        description: Google Cloud Dataproc List workflow templates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+      - name: createworkflowtemplate
+        method: POST
+        description: Google Cloud Dataproc Create a workflow template
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_DATAPROC_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: cloud-dataproc-workflowtemplates-rest
+    port: 8080
+    description: REST adapter for Google Cloud Dataproc API — WorkflowTemplates. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/projects/{project}/regions/{region}/workflowtemplates
+      name: projects-project-regions-region-workflowtemplates
+      description: REST surface for projects-project-regions-region-workflowTemplates.
+      operations:
+      - method: GET
+        name: listworkflowtemplates
+        description: Google Cloud Dataproc List workflow templates
+        call: cloud-dataproc-workflowtemplates.listworkflowtemplates
+        with:
+          project: rest.project
+          region: rest.region
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createworkflowtemplate
+        description: Google Cloud Dataproc Create a workflow template
+        call: cloud-dataproc-workflowtemplates.createworkflowtemplate
+        with:
+          project: rest.project
+          region: rest.region
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: cloud-dataproc-workflowtemplates-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Dataproc API — WorkflowTemplates. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: google-cloud-dataproc-list-workflow
+      description: Google Cloud Dataproc List workflow templates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cloud-dataproc-workflowtemplates.listworkflowtemplates
+      with:
+        project: tools.project
+        region: tools.region
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-dataproc-create-workflow
+      description: Google Cloud Dataproc Create a workflow template
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: cloud-dataproc-workflowtemplates.createworkflowtemplate
+      with:
+        project: tools.project
+        region: tools.region
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

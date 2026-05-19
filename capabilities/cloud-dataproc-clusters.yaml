@@ -1,0 +1,305 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Dataproc API — Clusters
+  description: 'Google Cloud Dataproc API — Clusters. 5 operations. Lead operation: Google Cloud Dataproc List clusters. Self-contained
+    Naftiko capability covering one Google Cloud Dataproc business surface.'
+  tags:
+  - Google Cloud Dataproc
+  - Clusters
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_DATAPROC_API_KEY: GOOGLE_CLOUD_DATAPROC_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: cloud-dataproc-clusters
+    baseUri: https://dataproc.googleapis.com/v1
+    description: Google Cloud Dataproc API — Clusters business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-project-regions-region-clusters
+      path: /projects/{project}/regions/{region}/clusters
+      operations:
+      - name: listclusters
+        method: GET
+        description: Google Cloud Dataproc List clusters
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: filter
+          in: query
+          type: string
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+      - name: createcluster
+        method: POST
+        description: Google Cloud Dataproc Create a cluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-project-regions-region-clusters-cluster
+      path: /projects/{project}/regions/{region}/clusters/{cluster}
+      operations:
+      - name: getcluster
+        method: GET
+        description: Google Cloud Dataproc Get a cluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: cluster
+          in: path
+          type: string
+          required: true
+      - name: updatecluster
+        method: PATCH
+        description: Google Cloud Dataproc Update a cluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: cluster
+          in: path
+          type: string
+          required: true
+        - name: updateMask
+          in: query
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletecluster
+        method: DELETE
+        description: Google Cloud Dataproc Delete a cluster
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: region
+          in: path
+          type: string
+          required: true
+        - name: cluster
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_DATAPROC_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: cloud-dataproc-clusters-rest
+    port: 8080
+    description: REST adapter for Google Cloud Dataproc API — Clusters. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/projects/{project}/regions/{region}/clusters
+      name: projects-project-regions-region-clusters
+      description: REST surface for projects-project-regions-region-clusters.
+      operations:
+      - method: GET
+        name: listclusters
+        description: Google Cloud Dataproc List clusters
+        call: cloud-dataproc-clusters.listclusters
+        with:
+          project: rest.project
+          region: rest.region
+          filter: rest.filter
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createcluster
+        description: Google Cloud Dataproc Create a cluster
+        call: cloud-dataproc-clusters.createcluster
+        with:
+          project: rest.project
+          region: rest.region
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{project}/regions/{region}/clusters/{cluster}
+      name: projects-project-regions-region-clusters-cluster
+      description: REST surface for projects-project-regions-region-clusters-cluster.
+      operations:
+      - method: GET
+        name: getcluster
+        description: Google Cloud Dataproc Get a cluster
+        call: cloud-dataproc-clusters.getcluster
+        with:
+          project: rest.project
+          region: rest.region
+          cluster: rest.cluster
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updatecluster
+        description: Google Cloud Dataproc Update a cluster
+        call: cloud-dataproc-clusters.updatecluster
+        with:
+          project: rest.project
+          region: rest.region
+          cluster: rest.cluster
+          updateMask: rest.updateMask
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletecluster
+        description: Google Cloud Dataproc Delete a cluster
+        call: cloud-dataproc-clusters.deletecluster
+        with:
+          project: rest.project
+          region: rest.region
+          cluster: rest.cluster
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: cloud-dataproc-clusters-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Dataproc API — Clusters. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: google-cloud-dataproc-list-clusters
+      description: Google Cloud Dataproc List clusters
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cloud-dataproc-clusters.listclusters
+      with:
+        project: tools.project
+        region: tools.region
+        filter: tools.filter
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-dataproc-create-cluster
+      description: Google Cloud Dataproc Create a cluster
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: cloud-dataproc-clusters.createcluster
+      with:
+        project: tools.project
+        region: tools.region
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-dataproc-get-cluster
+      description: Google Cloud Dataproc Get a cluster
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cloud-dataproc-clusters.getcluster
+      with:
+        project: tools.project
+        region: tools.region
+        cluster: tools.cluster
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-dataproc-update-cluster
+      description: Google Cloud Dataproc Update a cluster
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: cloud-dataproc-clusters.updatecluster
+      with:
+        project: tools.project
+        region: tools.region
+        cluster: tools.cluster
+        updateMask: tools.updateMask
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-dataproc-delete-cluster
+      description: Google Cloud Dataproc Delete a cluster
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: cloud-dataproc-clusters.deletecluster
+      with:
+        project: tools.project
+        region: tools.region
+        cluster: tools.cluster
+      outputParameters:
+      - type: object
+        mapping: $.
