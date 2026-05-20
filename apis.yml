@@ -11,67 +11,69 @@ modified: '2026-05-19'
 specificationVersion: '0.19'
 type: Index
 tags:
-- Big Data
-- Data Processing
-- Google Cloud
-- Hadoop
-- Spark
-apis:
-- name: Cloud Dataproc API
-  description: The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud. It provides programmatic access
-    to create, configure, and delete clusters, submit and monitor Apache Spark, Hadoop, Hive, and Pig jobs, and manage workflow
-    templates for orchestrating multi-step data processing pipelines. The API supports autoscaling policies, optional components,
-    and integration with other Google Cloud services.
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-  humanURL: https://cloud.google.com/dataproc/docs
-  baseURL: https://dataproc.googleapis.com/v1
-  tags:
-  - Clusters
+  - Big Data
+  - Data Processing
+  - Google Cloud
   - Hadoop
-  - Jobs
   - Spark
-  properties:
-  - type: Documentation
-    url: https://cloud.google.com/dataproc/docs/reference/rest
-  - type: OpenAPI
-    url: openapi/cloud-dataproc-openapi.yml
-  - type: Authentication
-    url: https://cloud.google.com/dataproc/docs/concepts/iam
+apis:
+  - name: Cloud Dataproc API
+    description: The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud. It provides programmatic access
+      to create, configure, and delete clusters, submit and monitor Apache Spark, Hadoop, Hive, and Pig jobs, and manage workflow
+      templates for orchestrating multi-step data processing pipelines. The API supports autoscaling policies, optional components,
+      and integration with other Google Cloud services.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cloud.google.com/dataproc/docs
+    baseURL: https://dataproc.googleapis.com/v1
+    tags:
+    - Clusters
+    - Hadoop
+    - Jobs
+    - Spark
+    properties:
+    - type: Documentation
+      url: https://cloud.google.com/dataproc/docs/reference/rest
+    - type: OpenAPI
+      url: openapi/cloud-dataproc-openapi.yml
+    - type: Authentication
+      url: https://cloud.google.com/dataproc/docs/concepts/iam
+    - type: GettingStarted
+      url: https://cloud.google.com/dataproc/docs/quickstarts
+    - type: JSONSchema
+      url: json-schema/cluster-schema.json
+    - type: NaftikoCapability
+      url: capabilities/cloud-dataproc-clusters.yaml
+    - type: NaftikoCapability
+      url: capabilities/cloud-dataproc-jobs.yaml
+    - type: NaftikoCapability
+      url: capabilities/cloud-dataproc-workflowtemplates.yaml
+common:
+  - type: GitHubOrganization
+    url: https://github.com/GoogleCloudDataproc
+  - type: Portal
+    url: https://cloud.google.com/dataproc
   - type: GettingStarted
     url: https://cloud.google.com/dataproc/docs/quickstarts
-  - type: JSONSchema
-    url: json-schema/cluster-schema.json
-  - type: NaftikoCapability
-    url: capabilities/cloud-dataproc-clusters.yaml
-  - type: NaftikoCapability
-    url: capabilities/cloud-dataproc-jobs.yaml
-  - type: NaftikoCapability
-    url: capabilities/cloud-dataproc-workflowtemplates.yaml
-common:
-- type: Portal
-  url: https://cloud.google.com/dataproc
-- type: GettingStarted
-  url: https://cloud.google.com/dataproc/docs/quickstarts
-- type: Documentation
-  url: https://cloud.google.com/dataproc/docs
-- type: Authentication
-  url: https://cloud.google.com/dataproc/docs/concepts/iam
-- type: Pricing
-  url: https://cloud.google.com/dataproc/pricing
-- type: TermsOfService
-  url: https://cloud.google.com/terms
-- type: PrivacyPolicy
-  url: https://policies.google.com/privacy
-- type: StatusPage
-  url: https://status.cloud.google.com/
-- type: Support
-  url: https://cloud.google.com/dataproc/docs/support
-- type: JSONLD
-  url: json-ld/google-cloud-dataproc-context.jsonld
-- type: Integrations
-  url: https://cloud.google.com/marketplace
+  - type: Documentation
+    url: https://cloud.google.com/dataproc/docs
+  - type: Authentication
+    url: https://cloud.google.com/dataproc/docs/concepts/iam
+  - type: Pricing
+    url: https://cloud.google.com/dataproc/pricing
+  - type: TermsOfService
+    url: https://cloud.google.com/terms
+  - type: PrivacyPolicy
+    url: https://policies.google.com/privacy
+  - type: StatusPage
+    url: https://status.cloud.google.com/
+  - type: Support
+    url: https://cloud.google.com/dataproc/docs/support
+  - type: JSONLD
+    url: json-ld/google-cloud-dataproc-context.jsonld
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
 integrations:
-- name: Become a Partner
+  - name: Become a Partner
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
