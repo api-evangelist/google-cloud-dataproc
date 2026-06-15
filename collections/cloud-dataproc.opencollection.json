@@ -1,0 +1,526 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Dataproc API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Clusters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Dataproc List clusters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/clusters",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Lists all regions/{region}/clusters in a project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Dataproc Create a cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/clusters",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Dataproc Get a cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/clusters/:cluster",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cluster",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Gets the resource representation for a cluster in a project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Dataproc Update a cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/clusters/:cluster",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cluster",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "updateMask",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Updates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Dataproc Delete a cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/clusters/:cluster",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cluster",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Deletes a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Dataproc List jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/jobs",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "clusterName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "jobStateMatcher",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Lists regions/{region}/jobs in a project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Dataproc Submit a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/jobs:submit",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Submits a job to a cluster."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Dataproc Get a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/jobs/:jobId",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Gets the resource representation for a job in a project."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Dataproc Delete a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/jobs/:jobId",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Deletes the job from the project. After deletion, the job metadata is not retrievable."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Dataproc Cancel a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/jobs/:jobId:cancel",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Starts a job cancellation request."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "WorkflowTemplates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Dataproc List workflow templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/workflowTemplates",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Lists workflows that match the specified filter in the request."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Dataproc Create a workflow template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/workflowTemplates",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates new workflow template."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

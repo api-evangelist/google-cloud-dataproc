@@ -1,0 +1,1951 @@
+{
+  "item": [
+    {
+      "id": "7e65e757-cd78-488e-ac8e-624c9b06f242",
+      "name": "Clusters",
+      "description": {
+        "content": "Operations on Dataproc clusters",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "22f5ed55-0d66-46a5-8dbf-8f6d9894880d",
+          "name": "Google Cloud Dataproc List clusters",
+          "request": {
+            "name": "Google Cloud Dataproc List clusters",
+            "description": {
+              "content": "Lists all regions/{region}/clusters in a project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "clusters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "05560dad-9bd5-40a6-94bb-cc1c42d69b6a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "clusters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"clusters\": [\n    {\n      \"projectId\": \"string\",\n      \"clusterName\": \"string\",\n      \"config\": {\n        \"configBucket\": \"string\",\n        \"tempBucket\": \"string\",\n        \"gceClusterConfig\": {\n          \"zoneUri\": \"string\",\n          \"networkUri\": \"string\",\n          \"subnetworkUri\": \"string\",\n          \"internalIpOnly\": true,\n          \"serviceAccountScopes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ],\n          \"metadata\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          }\n        },\n        \"masterConfig\": {\n          \"numInstances\": 4192,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 5394,\n            \"numLocalSsds\": 6484\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"workerConfig\": {\n          \"numInstances\": 4715,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 359,\n            \"numLocalSsds\": 1566\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"PREEMPTIBLE\"\n        },\n        \"secondaryWorkerConfig\": {\n          \"numInstances\": 8947,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 6470,\n            \"numLocalSsds\": 6393\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"NON_PREEMPTIBLE\"\n        },\n        \"softwareConfig\": {\n          \"imageVersion\": \"string\",\n          \"properties\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          },\n          \"optionalComponents\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"initializationActions\": [\n          {\n            \"executableFile\": \"string\",\n            \"executionTimeout\": \"string\"\n          },\n          {\n            \"executableFile\": \"string\",\n            \"executionTimeout\": \"string\"\n          }\n        ]\n      },\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"status\": {\n        \"state\": \"STOPPING\",\n        \"stateStartTime\": \"1983-12-23T08:25:43.771Z\",\n        \"detail\": \"string\"\n      },\n      \"statusHistory\": [\n        {\n          \"state\": \"REPAIRING\",\n          \"stateStartTime\": \"1957-02-25T04:14:04.415Z\",\n          \"detail\": \"string\"\n        },\n        {\n          \"state\": \"STOPPED\",\n          \"stateStartTime\": \"1983-11-24T18:26:57.688Z\",\n          \"detail\": \"string\"\n        }\n      ],\n      \"clusterUuid\": \"string\"\n    },\n    {\n      \"projectId\": \"string\",\n      \"clusterName\": \"string\",\n      \"config\": {\n        \"configBucket\": \"string\",\n        \"tempBucket\": \"string\",\n        \"gceClusterConfig\": {\n          \"zoneUri\": \"string\",\n          \"networkUri\": \"string\",\n          \"subnetworkUri\": \"string\",\n          \"internalIpOnly\": true,\n          \"serviceAccountScopes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ],\n          \"metadata\": {\n            \"key_0\": \"string\"\n          }\n        },\n        \"masterConfig\": {\n          \"numInstances\": 5203,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 4585,\n            \"numLocalSsds\": 9998\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"PREEMPTIBLE\"\n        },\n        \"workerConfig\": {\n          \"numInstances\": 7022,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 6282,\n            \"numLocalSsds\": 1110\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"PREEMPTIBILITY_UNSPECIFIED\"\n        },\n        \"secondaryWorkerConfig\": {\n          \"numInstances\": 7377,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 6370,\n            \"numLocalSsds\": 2654\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"softwareConfig\": {\n          \"imageVersion\": \"string\",\n          \"properties\": {\n            \"key_0\": \"string\"\n          },\n          \"optionalComponents\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"initializationActions\": [\n          {\n            \"executableFile\": \"string\",\n            \"executionTimeout\": \"string\"\n          },\n          {\n            \"executableFile\": \"string\",\n            \"executionTimeout\": \"string\"\n          }\n        ]\n      },\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"status\": {\n        \"state\": \"ERROR_DUE_TO_UPDATE\",\n        \"stateStartTime\": \"1984-02-06T14:06:12.549Z\",\n        \"detail\": \"string\"\n      },\n      \"statusHistory\": [\n        {\n          \"state\": \"STOPPING\",\n          \"stateStartTime\": \"1995-03-24T03:55:25.895Z\",\n          \"detail\": \"string\"\n        },\n        {\n          \"state\": \"STOPPED\",\n          \"stateStartTime\": \"2000-05-01T09:27:14.897Z\",\n          \"detail\": \"string\"\n        }\n      ],\n      \"clusterUuid\": \"string\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dbc752ae-1aaa-40f6-972d-2e8af8c43126",
+          "name": "Google Cloud Dataproc Create a cluster",
+          "request": {
+            "name": "Google Cloud Dataproc Create a cluster",
+            "description": {
+              "content": "Creates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "clusters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"projectId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"config\": {\n    \"configBucket\": \"<string>\",\n    \"tempBucket\": \"<string>\",\n    \"gceClusterConfig\": {\n      \"zoneUri\": \"<string>\",\n      \"networkUri\": \"<string>\",\n      \"subnetworkUri\": \"<string>\",\n      \"internalIpOnly\": \"<boolean>\",\n      \"serviceAccountScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"metadata\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      }\n    },\n    \"masterConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"<string>\"\n    },\n    \"workerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"<string>\"\n    },\n    \"secondaryWorkerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"<string>\"\n    },\n    \"softwareConfig\": {\n      \"imageVersion\": \"<string>\",\n      \"properties\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      },\n      \"optionalComponents\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"initializationActions\": [\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      },\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      }\n    ]\n  },\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"status\": {\n    \"state\": \"<string>\",\n    \"stateStartTime\": \"<dateTime>\",\n    \"detail\": \"<string>\"\n  },\n  \"statusHistory\": [\n    {\n      \"state\": \"<string>\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"state\": \"<string>\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    }\n  ],\n  \"clusterUuid\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5bc28a47-5625-47df-8ae3-427413fc8aa3",
+              "name": "Cluster creation initiated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "clusters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"projectId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"config\": {\n    \"configBucket\": \"string\",\n    \"tempBucket\": \"string\",\n    \"gceClusterConfig\": {\n      \"zoneUri\": \"string\",\n      \"networkUri\": \"string\",\n      \"subnetworkUri\": \"string\",\n      \"internalIpOnly\": false,\n      \"serviceAccountScopes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      }\n    },\n    \"masterConfig\": {\n      \"numInstances\": 1871,\n      \"machineTypeUri\": \"string\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"string\",\n        \"bootDiskSizeGb\": 8182,\n        \"numLocalSsds\": 2608\n      },\n      \"imageUri\": \"string\",\n      \"preemptibility\": \"PREEMPTIBILITY_UNSPECIFIED\"\n    },\n    \"workerConfig\": {\n      \"numInstances\": 5191,\n      \"machineTypeUri\": \"string\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"string\",\n        \"bootDiskSizeGb\": 9446,\n        \"numLocalSsds\": 5064\n      },\n      \"imageUri\": \"string\",\n      \"preemptibility\": \"SPOT\"\n    },\n    \"secondaryWorkerConfig\": {\n      \"numInstances\": 4761,\n      \"machineTypeUri\": \"string\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"string\",\n        \"bootDiskSizeGb\": 3950,\n        \"numLocalSsds\": 478\n      },\n      \"imageUri\": \"string\",\n      \"preemptibility\": \"PREEMPTIBLE\"\n    },\n    \"softwareConfig\": {\n      \"imageVersion\": \"string\",\n      \"properties\": {\n        \"key_0\": \"string\"\n      },\n      \"optionalComponents\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"initializationActions\": [\n      {\n        \"executableFile\": \"string\",\n        \"executionTimeout\": \"string\"\n      },\n      {\n        \"executableFile\": \"string\",\n        \"executionTimeout\": \"string\"\n      }\n    ]\n  },\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"status\": {\n    \"state\": \"UNKNOWN\",\n    \"stateStartTime\": \"1974-08-16T06:24:21.008Z\",\n    \"detail\": \"string\"\n  },\n  \"statusHistory\": [\n    {\n      \"state\": \"STARTING\",\n      \"stateStartTime\": \"1971-02-13T23:46:15.621Z\",\n      \"detail\": \"string\"\n    },\n    {\n      \"state\": \"DELETING\",\n      \"stateStartTime\": \"2009-03-17T00:03:52.617Z\",\n      \"detail\": \"string\"\n    }\n  ],\n  \"clusterUuid\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"done\": false,\n  \"metadata\": {},\n  \"error\": {\n    \"code\": 266,\n    \"message\": \"string\"\n  },\n  \"response\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d44d57c2-685e-40e9-b876-71e260061612",
+          "name": "Google Cloud Dataproc Get a cluster",
+          "request": {
+            "name": "Google Cloud Dataproc Get a cluster",
+            "description": {
+              "content": "Gets the resource representation for a cluster in a project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "clusters",
+                ":cluster"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cluster",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "87fe2e9d-5258-4dd5-81c6-d92295a20441",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "clusters",
+                    ":cluster"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cluster",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"projectId\": \"string\",\n  \"clusterName\": \"string\",\n  \"config\": {\n    \"configBucket\": \"string\",\n    \"tempBucket\": \"string\",\n    \"gceClusterConfig\": {\n      \"zoneUri\": \"string\",\n      \"networkUri\": \"string\",\n      \"subnetworkUri\": \"string\",\n      \"internalIpOnly\": false,\n      \"serviceAccountScopes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    },\n    \"masterConfig\": {\n      \"numInstances\": 948,\n      \"machineTypeUri\": \"string\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"string\",\n        \"bootDiskSizeGb\": 3767,\n        \"numLocalSsds\": 8732\n      },\n      \"imageUri\": \"string\",\n      \"preemptibility\": \"SPOT\"\n    },\n    \"workerConfig\": {\n      \"numInstances\": 4682,\n      \"machineTypeUri\": \"string\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"string\",\n        \"bootDiskSizeGb\": 4880,\n        \"numLocalSsds\": 7034\n      },\n      \"imageUri\": \"string\",\n      \"preemptibility\": \"PREEMPTIBLE\"\n    },\n    \"secondaryWorkerConfig\": {\n      \"numInstances\": 9009,\n      \"machineTypeUri\": \"string\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"string\",\n        \"bootDiskSizeGb\": 2699,\n        \"numLocalSsds\": 7675\n      },\n      \"imageUri\": \"string\",\n      \"preemptibility\": \"PREEMPTIBILITY_UNSPECIFIED\"\n    },\n    \"softwareConfig\": {\n      \"imageVersion\": \"string\",\n      \"properties\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      },\n      \"optionalComponents\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"initializationActions\": [\n      {\n        \"executableFile\": \"string\",\n        \"executionTimeout\": \"string\"\n      },\n      {\n        \"executableFile\": \"string\",\n        \"executionTimeout\": \"string\"\n      }\n    ]\n  },\n  \"labels\": {\n    \"key_0\": \"string\"\n  },\n  \"status\": {\n    \"state\": \"STARTING\",\n    \"stateStartTime\": \"1953-05-21T17:08:22.973Z\",\n    \"detail\": \"string\"\n  },\n  \"statusHistory\": [\n    {\n      \"state\": \"REPAIRING\",\n      \"stateStartTime\": \"1966-11-30T03:24:09.882Z\",\n      \"detail\": \"string\"\n    },\n    {\n      \"state\": \"CREATING\",\n      \"stateStartTime\": \"2023-04-11T03:52:17.918Z\",\n      \"detail\": \"string\"\n    }\n  ],\n  \"clusterUuid\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9b948f4a-beef-45c6-9c4a-cdac66bf40a3",
+          "name": "Google Cloud Dataproc Update a cluster",
+          "request": {
+            "name": "Google Cloud Dataproc Update a cluster",
+            "description": {
+              "content": "Updates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "clusters",
+                ":cluster"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "updateMask",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cluster",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"projectId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"config\": {\n    \"configBucket\": \"<string>\",\n    \"tempBucket\": \"<string>\",\n    \"gceClusterConfig\": {\n      \"zoneUri\": \"<string>\",\n      \"networkUri\": \"<string>\",\n      \"subnetworkUri\": \"<string>\",\n      \"internalIpOnly\": \"<boolean>\",\n      \"serviceAccountScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"metadata\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      }\n    },\n    \"masterConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"<string>\"\n    },\n    \"workerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"<string>\"\n    },\n    \"secondaryWorkerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"<string>\"\n    },\n    \"softwareConfig\": {\n      \"imageVersion\": \"<string>\",\n      \"properties\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      },\n      \"optionalComponents\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"initializationActions\": [\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      },\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      }\n    ]\n  },\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"status\": {\n    \"state\": \"<string>\",\n    \"stateStartTime\": \"<dateTime>\",\n    \"detail\": \"<string>\"\n  },\n  \"statusHistory\": [\n    {\n      \"state\": \"<string>\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"state\": \"<string>\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    }\n  ],\n  \"clusterUuid\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7ab45612-9b71-4e9f-9308-44dff43c8977",
+              "name": "Cluster update initiated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "clusters",
+                    ":cluster"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "updateMask",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cluster",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"projectId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"config\": {\n    \"configBucket\": \"string\",\n    \"tempBucket\": \"string\",\n    \"gceClusterConfig\": {\n      \"zoneUri\": \"string\",\n      \"networkUri\": \"string\",\n      \"subnetworkUri\": \"string\",\n      \"internalIpOnly\": false,\n      \"serviceAccountScopes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      }\n    },\n    \"masterConfig\": {\n      \"numInstances\": 1871,\n      \"machineTypeUri\": \"string\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"string\",\n        \"bootDiskSizeGb\": 8182,\n        \"numLocalSsds\": 2608\n      },\n      \"imageUri\": \"string\",\n      \"preemptibility\": \"PREEMPTIBILITY_UNSPECIFIED\"\n    },\n    \"workerConfig\": {\n      \"numInstances\": 5191,\n      \"machineTypeUri\": \"string\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"string\",\n        \"bootDiskSizeGb\": 9446,\n        \"numLocalSsds\": 5064\n      },\n      \"imageUri\": \"string\",\n      \"preemptibility\": \"SPOT\"\n    },\n    \"secondaryWorkerConfig\": {\n      \"numInstances\": 4761,\n      \"machineTypeUri\": \"string\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"string\",\n        \"bootDiskSizeGb\": 3950,\n        \"numLocalSsds\": 478\n      },\n      \"imageUri\": \"string\",\n      \"preemptibility\": \"PREEMPTIBLE\"\n    },\n    \"softwareConfig\": {\n      \"imageVersion\": \"string\",\n      \"properties\": {\n        \"key_0\": \"string\"\n      },\n      \"optionalComponents\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"initializationActions\": [\n      {\n        \"executableFile\": \"string\",\n        \"executionTimeout\": \"string\"\n      },\n      {\n        \"executableFile\": \"string\",\n        \"executionTimeout\": \"string\"\n      }\n    ]\n  },\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"status\": {\n    \"state\": \"UNKNOWN\",\n    \"stateStartTime\": \"1974-08-16T06:24:21.008Z\",\n    \"detail\": \"string\"\n  },\n  \"statusHistory\": [\n    {\n      \"state\": \"STARTING\",\n      \"stateStartTime\": \"1971-02-13T23:46:15.621Z\",\n      \"detail\": \"string\"\n    },\n    {\n      \"state\": \"DELETING\",\n      \"stateStartTime\": \"2009-03-17T00:03:52.617Z\",\n      \"detail\": \"string\"\n    }\n  ],\n  \"clusterUuid\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"done\": false,\n  \"metadata\": {},\n  \"error\": {\n    \"code\": 266,\n    \"message\": \"string\"\n  },\n  \"response\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b319a281-fb0c-41af-8902-6475e27f6e0e",
+          "name": "Google Cloud Dataproc Delete a cluster",
+          "request": {
+            "name": "Google Cloud Dataproc Delete a cluster",
+            "description": {
+              "content": "Deletes a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "clusters",
+                ":cluster"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cluster",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6bb16d8c-ab84-4e2c-8095-a2f7b0b76859",
+              "name": "Cluster deletion initiated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "clusters",
+                    ":cluster"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cluster",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"done\": false,\n  \"metadata\": {},\n  \"error\": {\n    \"code\": 266,\n    \"message\": \"string\"\n  },\n  \"response\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "9712eace-68d3-4786-bd53-48087c3aa066",
+      "name": "Jobs",
+      "description": {
+        "content": "Operations on Dataproc jobs",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "77f3630e-a56d-4520-a637-7a3ee81b9ce7",
+          "name": "Google Cloud Dataproc List jobs",
+          "request": {
+            "name": "Google Cloud Dataproc List jobs",
+            "description": {
+              "content": "Lists regions/{region}/jobs in a project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "clusterName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "jobStateMatcher",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3017be31-c0ee-4218-a736-0b7d02644bc0",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "clusterName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "jobStateMatcher",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobs\": [\n    {\n      \"reference\": {\n        \"projectId\": \"string\",\n        \"jobId\": \"string\"\n      },\n      \"placement\": {\n        \"clusterName\": \"string\",\n        \"clusterUuid\": \"string\"\n      },\n      \"hadoopJob\": {\n        \"mainJarFileUri\": \"string\",\n        \"mainClass\": \"string\",\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"jarFileUris\": [\n          \"string\",\n          \"string\"\n        ],\n        \"properties\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\"\n        }\n      },\n      \"sparkJob\": {\n        \"mainJarFileUri\": \"string\",\n        \"mainClass\": \"string\",\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"jarFileUris\": [\n          \"string\",\n          \"string\"\n        ],\n        \"properties\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"pysparkJob\": {\n        \"mainPythonFileUri\": \"string\",\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"pythonFileUris\": [\n          \"string\",\n          \"string\"\n        ],\n        \"properties\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"hiveJob\": {\n        \"queryFileUri\": \"string\",\n        \"queryList\": {\n          \"queries\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"continueOnFailure\": true,\n        \"scriptVariables\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"properties\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"pigJob\": {\n        \"queryFileUri\": \"string\",\n        \"queryList\": {\n          \"queries\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"continueOnFailure\": false,\n        \"scriptVariables\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"status\": {\n        \"state\": \"PENDING\",\n        \"stateStartTime\": \"1956-06-16T23:12:38.797Z\",\n        \"details\": \"string\"\n      },\n      \"labels\": {\n        \"key_0\": \"string\"\n      },\n      \"driverOutputResourceUri\": \"string\",\n      \"driverControlFilesUri\": \"string\",\n      \"jobUuid\": \"string\"\n    },\n    {\n      \"reference\": {\n        \"projectId\": \"string\",\n        \"jobId\": \"string\"\n      },\n      \"placement\": {\n        \"clusterName\": \"string\",\n        \"clusterUuid\": \"string\"\n      },\n      \"hadoopJob\": {\n        \"mainJarFileUri\": \"string\",\n        \"mainClass\": \"string\",\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"jarFileUris\": [\n          \"string\",\n          \"string\"\n        ],\n        \"properties\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"sparkJob\": {\n        \"mainJarFileUri\": \"string\",\n        \"mainClass\": \"string\",\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"jarFileUris\": [\n          \"string\",\n          \"string\"\n        ],\n        \"properties\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"pysparkJob\": {\n        \"mainPythonFileUri\": \"string\",\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"pythonFileUris\": [\n          \"string\",\n          \"string\"\n        ],\n        \"properties\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"hiveJob\": {\n        \"queryFileUri\": \"string\",\n        \"queryList\": {\n          \"queries\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"continueOnFailure\": false,\n        \"scriptVariables\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"properties\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\"\n        }\n      },\n      \"pigJob\": {\n        \"queryFileUri\": \"string\",\n        \"queryList\": {\n          \"queries\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"continueOnFailure\": true,\n        \"scriptVariables\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"status\": {\n        \"state\": \"STATE_UNSPECIFIED\",\n        \"stateStartTime\": \"1966-08-02T00:34:09.771Z\",\n        \"details\": \"string\"\n      },\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"driverOutputResourceUri\": \"string\",\n      \"driverControlFilesUri\": \"string\",\n      \"jobUuid\": \"string\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3bc2c0f0-2160-471d-ab4d-398a87094fe7",
+          "name": "Google Cloud Dataproc Submit a job",
+          "request": {
+            "name": "Google Cloud Dataproc Submit a job",
+            "description": {
+              "content": "Submits a job to a cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "jobs:submit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"job\": {\n    \"reference\": {\n      \"projectId\": \"<string>\",\n      \"jobId\": \"<string>\"\n    },\n    \"placement\": {\n      \"clusterName\": \"<string>\",\n      \"clusterUuid\": \"<string>\"\n    },\n    \"hadoopJob\": {\n      \"mainJarFileUri\": \"<string>\",\n      \"mainClass\": \"<string>\",\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"jarFileUris\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"properties\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      }\n    },\n    \"sparkJob\": {\n      \"mainJarFileUri\": \"<string>\",\n      \"mainClass\": \"<string>\",\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"jarFileUris\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"properties\": {\n        \"key_0\": \"<string>\"\n      }\n    },\n    \"pysparkJob\": {\n      \"mainPythonFileUri\": \"<string>\",\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"pythonFileUris\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"properties\": {\n        \"key_0\": \"<string>\"\n      }\n    },\n    \"hiveJob\": {\n      \"queryFileUri\": \"<string>\",\n      \"queryList\": {\n        \"queries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"continueOnFailure\": \"<boolean>\",\n      \"scriptVariables\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"properties\": {\n        \"key_0\": \"<string>\"\n      }\n    },\n    \"pigJob\": {\n      \"queryFileUri\": \"<string>\",\n      \"queryList\": {\n        \"queries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"continueOnFailure\": \"<boolean>\",\n      \"scriptVariables\": {\n        \"key_0\": \"<string>\"\n      }\n    },\n    \"status\": {\n      \"state\": \"<string>\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"details\": \"<string>\"\n    },\n    \"labels\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\",\n      \"key_2\": \"<string>\",\n      \"key_3\": \"<string>\"\n    },\n    \"driverOutputResourceUri\": \"<string>\",\n    \"driverControlFilesUri\": \"<string>\",\n    \"jobUuid\": \"<string>\"\n  },\n  \"requestId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f7593c9a-a9cb-400f-8ddd-20d16c32c7a7",
+              "name": "Job submitted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "jobs:submit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"job\": {\n    \"reference\": {\n      \"projectId\": \"string\",\n      \"jobId\": \"string\"\n    },\n    \"placement\": {\n      \"clusterName\": \"string\",\n      \"clusterUuid\": \"string\"\n    },\n    \"hadoopJob\": {\n      \"mainJarFileUri\": \"string\",\n      \"mainClass\": \"string\",\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"jarFileUris\": [\n        \"string\",\n        \"string\"\n      ],\n      \"properties\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"sparkJob\": {\n      \"mainJarFileUri\": \"string\",\n      \"mainClass\": \"string\",\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"jarFileUris\": [\n        \"string\",\n        \"string\"\n      ],\n      \"properties\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\"\n      }\n    },\n    \"pysparkJob\": {\n      \"mainPythonFileUri\": \"string\",\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pythonFileUris\": [\n        \"string\",\n        \"string\"\n      ],\n      \"properties\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    },\n    \"hiveJob\": {\n      \"queryFileUri\": \"string\",\n      \"queryList\": {\n        \"queries\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"continueOnFailure\": true,\n      \"scriptVariables\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"properties\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    },\n    \"pigJob\": {\n      \"queryFileUri\": \"string\",\n      \"queryList\": {\n        \"queries\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"continueOnFailure\": false,\n      \"scriptVariables\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"status\": {\n      \"state\": \"PENDING\",\n      \"stateStartTime\": \"1988-07-28T15:53:31.092Z\",\n      \"details\": \"string\"\n    },\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"driverOutputResourceUri\": \"string\",\n    \"driverControlFilesUri\": \"string\",\n    \"jobUuid\": \"string\"\n  },\n  \"requestId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reference\": {\n    \"projectId\": \"string\",\n    \"jobId\": \"string\"\n  },\n  \"placement\": {\n    \"clusterName\": \"string\",\n    \"clusterUuid\": \"string\"\n  },\n  \"hadoopJob\": {\n    \"mainJarFileUri\": \"string\",\n    \"mainClass\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"jarFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"sparkJob\": {\n    \"mainJarFileUri\": \"string\",\n    \"mainClass\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"jarFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    }\n  },\n  \"pysparkJob\": {\n    \"mainPythonFileUri\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"pythonFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"hiveJob\": {\n    \"queryFileUri\": \"string\",\n    \"queryList\": {\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"continueOnFailure\": false,\n    \"scriptVariables\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"pigJob\": {\n    \"queryFileUri\": \"string\",\n    \"queryList\": {\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"continueOnFailure\": true,\n    \"scriptVariables\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    }\n  },\n  \"status\": {\n    \"state\": \"CANCELLED\",\n    \"stateStartTime\": \"2013-05-09T06:53:01.138Z\",\n    \"details\": \"string\"\n  },\n  \"labels\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"driverOutputResourceUri\": \"string\",\n  \"driverControlFilesUri\": \"string\",\n  \"jobUuid\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "221981b2-cb73-4a83-952c-99a4c0217714",
+          "name": "Google Cloud Dataproc Get a job",
+          "request": {
+            "name": "Google Cloud Dataproc Get a job",
+            "description": {
+              "content": "Gets the resource representation for a job in a project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "jobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "576ceee9-d18d-4332-aef3-d1afe42650d8",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reference\": {\n    \"projectId\": \"string\",\n    \"jobId\": \"string\"\n  },\n  \"placement\": {\n    \"clusterName\": \"string\",\n    \"clusterUuid\": \"string\"\n  },\n  \"hadoopJob\": {\n    \"mainJarFileUri\": \"string\",\n    \"mainClass\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"jarFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"sparkJob\": {\n    \"mainJarFileUri\": \"string\",\n    \"mainClass\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"jarFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    }\n  },\n  \"pysparkJob\": {\n    \"mainPythonFileUri\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"pythonFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"hiveJob\": {\n    \"queryFileUri\": \"string\",\n    \"queryList\": {\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"continueOnFailure\": false,\n    \"scriptVariables\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"pigJob\": {\n    \"queryFileUri\": \"string\",\n    \"queryList\": {\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"continueOnFailure\": true,\n    \"scriptVariables\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    }\n  },\n  \"status\": {\n    \"state\": \"CANCELLED\",\n    \"stateStartTime\": \"2013-05-09T06:53:01.138Z\",\n    \"details\": \"string\"\n  },\n  \"labels\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"driverOutputResourceUri\": \"string\",\n  \"driverControlFilesUri\": \"string\",\n  \"jobUuid\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4cc54a25-db2a-4dfe-b79e-801170565ca4",
+          "name": "Google Cloud Dataproc Delete a job",
+          "request": {
+            "name": "Google Cloud Dataproc Delete a job",
+            "description": {
+              "content": "Deletes the job from the project. After deletion, the job metadata is not retrievable.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "jobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0293ed45-7641-4f92-b226-96838f725250",
+              "name": "Job deleted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d427020-c974-4771-8410-872545b872eb",
+          "name": "Google Cloud Dataproc Cancel a job",
+          "request": {
+            "name": "Google Cloud Dataproc Cancel a job",
+            "description": {
+              "content": "Starts a job cancellation request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "jobs",
+                "{{jobId}}:cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ab8793c8-4c4b-498f-8396-bfa772290f52",
+              "name": "Job cancellation initiated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "jobs",
+                    "{{jobId}}:cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reference\": {\n    \"projectId\": \"string\",\n    \"jobId\": \"string\"\n  },\n  \"placement\": {\n    \"clusterName\": \"string\",\n    \"clusterUuid\": \"string\"\n  },\n  \"hadoopJob\": {\n    \"mainJarFileUri\": \"string\",\n    \"mainClass\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"jarFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"sparkJob\": {\n    \"mainJarFileUri\": \"string\",\n    \"mainClass\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"jarFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    }\n  },\n  \"pysparkJob\": {\n    \"mainPythonFileUri\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"pythonFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"hiveJob\": {\n    \"queryFileUri\": \"string\",\n    \"queryList\": {\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"continueOnFailure\": false,\n    \"scriptVariables\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    }\n  },\n  \"pigJob\": {\n    \"queryFileUri\": \"string\",\n    \"queryList\": {\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"continueOnFailure\": true,\n    \"scriptVariables\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    }\n  },\n  \"status\": {\n    \"state\": \"CANCELLED\",\n    \"stateStartTime\": \"2013-05-09T06:53:01.138Z\",\n    \"details\": \"string\"\n  },\n  \"labels\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"driverOutputResourceUri\": \"string\",\n  \"driverControlFilesUri\": \"string\",\n  \"jobUuid\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ff4aaf11-8302-4338-8e07-0f485bb8cb87",
+      "name": "WorkflowTemplates",
+      "description": {
+        "content": "Operations on workflow templates",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9c38f09e-34ba-48f5-a6da-87b026faba0f",
+          "name": "Google Cloud Dataproc List workflow templates",
+          "request": {
+            "name": "Google Cloud Dataproc List workflow templates",
+            "description": {
+              "content": "Lists workflows that match the specified filter in the request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "workflowTemplates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "811ef1af-f6f4-48b3-9735-1c6d91d31950",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "workflowTemplates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"templates\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"version\": 7186,\n      \"createTime\": \"2021-05-30T20:39:15.283Z\",\n      \"updateTime\": \"1961-09-10T17:43:17.045Z\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"placement\": {\n        \"managedCluster\": {\n          \"clusterName\": \"string\",\n          \"config\": {\n            \"configBucket\": \"string\",\n            \"tempBucket\": \"string\",\n            \"gceClusterConfig\": {\n              \"zoneUri\": \"string\",\n              \"networkUri\": \"string\",\n              \"subnetworkUri\": \"string\",\n              \"internalIpOnly\": true,\n              \"serviceAccountScopes\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"tags\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"metadata\": {\n                \"key_0\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            },\n            \"masterConfig\": {\n              \"numInstances\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"machineTypeUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"diskConfig\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"imageUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"preemptibility\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"workerConfig\": {\n              \"numInstances\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"machineTypeUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"diskConfig\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"imageUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"preemptibility\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"secondaryWorkerConfig\": {\n              \"numInstances\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"machineTypeUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"diskConfig\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"imageUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"preemptibility\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"softwareConfig\": {\n              \"imageVersion\": \"string\",\n              \"properties\": {\n                \"key_0\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_1\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"optionalComponents\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            },\n            \"initializationActions\": [\n              {\n                \"executableFile\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"executionTimeout\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"executableFile\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"executionTimeout\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ]\n          }\n        },\n        \"clusterSelector\": {\n          \"zone\": \"string\",\n          \"clusterLabels\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\",\n            \"key_2\": \"string\"\n          }\n        }\n      },\n      \"jobs\": [\n        {\n          \"stepId\": \"string\",\n          \"hadoopJob\": {},\n          \"sparkJob\": {},\n          \"pysparkJob\": {},\n          \"hiveJob\": {},\n          \"pigJob\": {},\n          \"prerequisiteStepIds\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"stepId\": \"string\",\n          \"hadoopJob\": {},\n          \"sparkJob\": {},\n          \"pysparkJob\": {},\n          \"hiveJob\": {},\n          \"pigJob\": {},\n          \"prerequisiteStepIds\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"version\": 3358,\n      \"createTime\": \"2001-06-10T00:46:12.904Z\",\n      \"updateTime\": \"1989-08-29T18:53:58.994Z\",\n      \"labels\": {\n        \"key_0\": \"string\"\n      },\n      \"placement\": {\n        \"managedCluster\": {\n          \"clusterName\": \"string\",\n          \"config\": {\n            \"configBucket\": \"string\",\n            \"tempBucket\": \"string\",\n            \"gceClusterConfig\": {\n              \"zoneUri\": \"string\",\n              \"networkUri\": \"string\",\n              \"subnetworkUri\": \"string\",\n              \"internalIpOnly\": true,\n              \"serviceAccountScopes\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"tags\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"metadata\": {\n                \"key_0\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_1\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            },\n            \"masterConfig\": {\n              \"numInstances\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"machineTypeUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"diskConfig\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"imageUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"preemptibility\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"workerConfig\": {\n              \"numInstances\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"machineTypeUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"diskConfig\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"imageUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"preemptibility\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"secondaryWorkerConfig\": {\n              \"numInstances\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"machineTypeUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"diskConfig\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"imageUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"preemptibility\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"softwareConfig\": {\n              \"imageVersion\": \"string\",\n              \"properties\": {\n                \"key_0\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_1\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"optionalComponents\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            },\n            \"initializationActions\": [\n              {\n                \"executableFile\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"executionTimeout\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"executableFile\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"executionTimeout\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ]\n          }\n        },\n        \"clusterSelector\": {\n          \"zone\": \"string\",\n          \"clusterLabels\": {\n            \"key_0\": \"string\"\n          }\n        }\n      },\n      \"jobs\": [\n        {\n          \"stepId\": \"string\",\n          \"hadoopJob\": {},\n          \"sparkJob\": {},\n          \"pysparkJob\": {},\n          \"hiveJob\": {},\n          \"pigJob\": {},\n          \"prerequisiteStepIds\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"stepId\": \"string\",\n          \"hadoopJob\": {},\n          \"sparkJob\": {},\n          \"pysparkJob\": {},\n          \"hiveJob\": {},\n          \"pigJob\": {},\n          \"prerequisiteStepIds\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f1a7929d-5b6c-4213-929e-273272ee991a",
+          "name": "Google Cloud Dataproc Create a workflow template",
+          "request": {
+            "name": "Google Cloud Dataproc Create a workflow template",
+            "description": {
+              "content": "Creates new workflow template.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "workflowTemplates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"version\": \"<integer>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"placement\": {\n    \"managedCluster\": {\n      \"clusterName\": \"<string>\",\n      \"config\": {\n        \"configBucket\": \"<string>\",\n        \"tempBucket\": \"<string>\",\n        \"gceClusterConfig\": {\n          \"zoneUri\": \"<string>\",\n          \"networkUri\": \"<string>\",\n          \"subnetworkUri\": \"<string>\",\n          \"internalIpOnly\": \"<boolean>\",\n          \"serviceAccountScopes\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"metadata\": {\n            \"key_0\": \"<string>\",\n            \"key_1\": \"<string>\"\n          }\n        },\n        \"masterConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"<string>\"\n        },\n        \"workerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"<string>\"\n        },\n        \"secondaryWorkerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"<string>\"\n        },\n        \"softwareConfig\": {\n          \"imageVersion\": \"<string>\",\n          \"properties\": {\n            \"key_0\": \"<string>\",\n            \"key_1\": \"<string>\",\n            \"key_2\": \"<string>\",\n            \"key_3\": \"<string>\"\n          },\n          \"optionalComponents\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"initializationActions\": [\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          },\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          }\n        ]\n      }\n    },\n    \"clusterSelector\": {\n      \"zone\": \"<string>\",\n      \"clusterLabels\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      }\n    }\n  },\n  \"jobs\": [\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": \"<object>\",\n      \"sparkJob\": \"<object>\",\n      \"pysparkJob\": \"<object>\",\n      \"hiveJob\": \"<object>\",\n      \"pigJob\": \"<object>\",\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": \"<object>\",\n      \"sparkJob\": \"<object>\",\n      \"pysparkJob\": \"<object>\",\n      \"hiveJob\": \"<object>\",\n      \"pigJob\": \"<object>\",\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f886c8ff-f5f0-4eb0-a178-6cb1f685b3ed",
+              "name": "Workflow template created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "workflowTemplates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"version\": \"<integer>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"placement\": {\n    \"managedCluster\": {\n      \"clusterName\": \"<string>\",\n      \"config\": {\n        \"configBucket\": \"string\",\n        \"tempBucket\": \"string\",\n        \"gceClusterConfig\": {\n          \"zoneUri\": \"string\",\n          \"networkUri\": \"string\",\n          \"subnetworkUri\": \"string\",\n          \"internalIpOnly\": false,\n          \"serviceAccountScopes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ],\n          \"metadata\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          }\n        },\n        \"masterConfig\": {\n          \"numInstances\": 6232,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 3891,\n            \"numLocalSsds\": 5151\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"PREEMPTIBILITY_UNSPECIFIED\"\n        },\n        \"workerConfig\": {\n          \"numInstances\": 6610,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 1065,\n            \"numLocalSsds\": 2809\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"secondaryWorkerConfig\": {\n          \"numInstances\": 1725,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 8931,\n            \"numLocalSsds\": 273\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"softwareConfig\": {\n          \"imageVersion\": \"string\",\n          \"properties\": {\n            \"key_0\": \"string\"\n          },\n          \"optionalComponents\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"initializationActions\": [\n          {\n            \"executableFile\": \"string\",\n            \"executionTimeout\": \"string\"\n          },\n          {\n            \"executableFile\": \"string\",\n            \"executionTimeout\": \"string\"\n          }\n        ]\n      }\n    },\n    \"clusterSelector\": {\n      \"zone\": \"<string>\",\n      \"clusterLabels\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      }\n    }\n  },\n  \"jobs\": [\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": \"<object>\",\n      \"sparkJob\": \"<object>\",\n      \"pysparkJob\": \"<object>\",\n      \"hiveJob\": \"<object>\",\n      \"pigJob\": \"<object>\",\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": \"<object>\",\n      \"sparkJob\": \"<object>\",\n      \"pysparkJob\": \"<object>\",\n      \"hiveJob\": \"<object>\",\n      \"pigJob\": \"<object>\",\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"version\": 4766,\n  \"createTime\": \"1948-08-14T11:21:45.044Z\",\n  \"updateTime\": \"2001-04-18T21:50:43.020Z\",\n  \"labels\": {\n    \"key_0\": \"string\"\n  },\n  \"placement\": {\n    \"managedCluster\": {\n      \"clusterName\": \"string\",\n      \"config\": {\n        \"configBucket\": \"string\",\n        \"tempBucket\": \"string\",\n        \"gceClusterConfig\": {\n          \"zoneUri\": \"string\",\n          \"networkUri\": \"string\",\n          \"subnetworkUri\": \"string\",\n          \"internalIpOnly\": false,\n          \"serviceAccountScopes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ],\n          \"metadata\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\",\n            \"key_2\": \"string\",\n            \"key_3\": \"string\"\n          }\n        },\n        \"masterConfig\": {\n          \"numInstances\": 4220,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 6256,\n            \"numLocalSsds\": 1957\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"workerConfig\": {\n          \"numInstances\": 1349,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 5366,\n            \"numLocalSsds\": 1180\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"secondaryWorkerConfig\": {\n          \"numInstances\": 764,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 9823,\n            \"numLocalSsds\": 3776\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"NON_PREEMPTIBLE\"\n        },\n        \"softwareConfig\": {\n          \"imageVersion\": \"string\",\n          \"properties\": {\n            \"key_0\": \"string\"\n          },\n          \"optionalComponents\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"initializationActions\": [\n          {\n            \"executableFile\": \"string\",\n            \"executionTimeout\": \"string\"\n          },\n          {\n            \"executableFile\": \"string\",\n            \"executionTimeout\": \"string\"\n          }\n        ]\n      }\n    },\n    \"clusterSelector\": {\n      \"zone\": \"string\",\n      \"clusterLabels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    }\n  },\n  \"jobs\": [\n    {\n      \"stepId\": \"string\",\n      \"hadoopJob\": {},\n      \"sparkJob\": {},\n      \"pysparkJob\": {},\n      \"hiveJob\": {},\n      \"pigJob\": {},\n      \"prerequisiteStepIds\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"stepId\": \"string\",\n      \"hadoopJob\": {},\n      \"sparkJob\": {},\n      \"pysparkJob\": {},\n      \"hiveJob\": {},\n      \"pigJob\": {},\n      \"prerequisiteStepIds\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dataproc.googleapis.com/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "jobId"
+    }
+  ],
+  "info": {
+    "_postman_id": "44502130-8334-436b-b939-81772463d6fc",
+    "name": "Google Cloud Dataproc API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud Platform. It provides programmatic access to create and manage clusters, submit and monitor Apache Spark, Apache Hadoop, Apache Hive, and Apache Pig jobs, and manage workflow templates for orchestrating multi-step data processing pipelines.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
