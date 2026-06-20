@@ -5,7 +5,7 @@ description: >-
   Flink, Presto, and other open-source data processing frameworks. It enables batch processing, querying, streaming, and
   machine learning use cases with cluster management that takes seconds instead of minutes, along with per-second
   billing and autoscaling capabilities.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-dataproc/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -24,7 +24,7 @@ apis:
       create, configure, and delete clusters, submit and monitor Apache Spark, Hadoop, Hive, and Pig jobs, and manage
       workflow templates for orchestrating multi-step data processing pipelines. The API supports autoscaling policies,
       optional components, and integration with other Google Cloud services.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cloud.google.com/dataproc/docs
     baseURL: https://dataproc.googleapis.com/v1
     tags:
