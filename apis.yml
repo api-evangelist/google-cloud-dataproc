@@ -44,6 +44,8 @@ apis:
       - type: JSONSchema
         url: json-schema/cluster-schema.json
 common:
+  - type: OAuthScopes
+    url: scopes/google-cloud-dataproc-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/GoogleCloudDataproc
   - type: Portal
