@@ -44,6 +44,12 @@ apis:
       - type: JSONSchema
         url: json-schema/cluster-schema.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-dataproc-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-dataproc-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-dataproc-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-dataproc-scopes.yml
   - type: GitHubOrganization
