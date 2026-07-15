@@ -44,6 +44,8 @@ apis:
       - type: JSONSchema
         url: json-schema/cluster-schema.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-cloud-dataproc-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-cloud-dataproc-vulnerability-disclosure.yml
   - type: DomainSecurity
