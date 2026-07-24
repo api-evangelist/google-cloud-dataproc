@@ -1,0 +1,366 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Dataproc Clusters Jobs API
+  description: The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud Platform. It provides programmatic access to create and manage clusters, submit and monitor Apache Spark, Apache Hadoop, Apache Hive, and Apache Pig jobs, and manage workflow templates for orchestrating multi-step data processing pipelines.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/dataproc/docs/reference/rest
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://dataproc.googleapis.com/v1
+  description: Cloud Dataproc API v1
+tags:
+- name: Jobs
+  description: Operations on Dataproc jobs
+paths:
+  /projects/{project}/regions/{region}/jobs:
+    get:
+      tags:
+      - Jobs
+      summary: Google Cloud Dataproc List jobs
+      description: Lists regions/{region}/jobs in a project.
+      operationId: listJobs
+      parameters:
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: region
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      - name: clusterName
+        in: query
+        schema:
+          type: string
+      - name: jobStateMatcher
+        in: query
+        schema:
+          type: string
+          enum:
+          - ALL
+          - ACTIVE
+          - NON_ACTIVE
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListJobsResponse'
+      security:
+      - oauth2:
+        - https://www.googleapis.com/auth/cloud-platform
+  /projects/{project}/regions/{region}/jobs:submit:
+    post:
+      tags:
+      - Jobs
+      summary: Google Cloud Dataproc Submit a job
+      description: Submits a job to a cluster.
+      operationId: submitJob
+      parameters:
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: region
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubmitJobRequest'
+      responses:
+        '200':
+          description: Job submitted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+      security:
+      - oauth2:
+        - https://www.googleapis.com/auth/cloud-platform
+  /projects/{project}/regions/{region}/jobs/{jobId}:
+    get:
+      tags:
+      - Jobs
+      summary: Google Cloud Dataproc Get a job
+      description: Gets the resource representation for a job in a project.
+      operationId: getJob
+      parameters:
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: region
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+      security:
+      - oauth2:
+        - https://www.googleapis.com/auth/cloud-platform
+    delete:
+      tags:
+      - Jobs
+      summary: Google Cloud Dataproc Delete a job
+      description: Deletes the job from the project. After deletion, the job metadata is not retrievable.
+      operationId: deleteJob
+      parameters:
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: region
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Job deleted successfully
+      security:
+      - oauth2:
+        - https://www.googleapis.com/auth/cloud-platform
+  /projects/{project}/regions/{region}/jobs/{jobId}:cancel:
+    post:
+      tags:
+      - Jobs
+      summary: Google Cloud Dataproc Cancel a job
+      description: Starts a job cancellation request.
+      operationId: cancelJob
+      parameters:
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: region
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Job cancellation initiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+      security:
+      - oauth2:
+        - https://www.googleapis.com/auth/cloud-platform
+components:
+  schemas:
+    Job:
+      type: object
+      properties:
+        reference:
+          type: object
+          properties:
+            projectId:
+              type: string
+            jobId:
+              type: string
+        placement:
+          type: object
+          properties:
+            clusterName:
+              type: string
+            clusterUuid:
+              type: string
+        hadoopJob:
+          type: object
+          properties:
+            mainJarFileUri:
+              type: string
+            mainClass:
+              type: string
+            args:
+              type: array
+              items:
+                type: string
+            jarFileUris:
+              type: array
+              items:
+                type: string
+            properties:
+              type: object
+              additionalProperties:
+                type: string
+        sparkJob:
+          type: object
+          properties:
+            mainJarFileUri:
+              type: string
+            mainClass:
+              type: string
+            args:
+              type: array
+              items:
+                type: string
+            jarFileUris:
+              type: array
+              items:
+                type: string
+            properties:
+              type: object
+              additionalProperties:
+                type: string
+        pysparkJob:
+          type: object
+          properties:
+            mainPythonFileUri:
+              type: string
+            args:
+              type: array
+              items:
+                type: string
+            pythonFileUris:
+              type: array
+              items:
+                type: string
+            properties:
+              type: object
+              additionalProperties:
+                type: string
+        hiveJob:
+          type: object
+          properties:
+            queryFileUri:
+              type: string
+            queryList:
+              type: object
+              properties:
+                queries:
+                  type: array
+                  items:
+                    type: string
+            continueOnFailure:
+              type: boolean
+            scriptVariables:
+              type: object
+              additionalProperties:
+                type: string
+            properties:
+              type: object
+              additionalProperties:
+                type: string
+        pigJob:
+          type: object
+          properties:
+            queryFileUri:
+              type: string
+            queryList:
+              type: object
+              properties:
+                queries:
+                  type: array
+                  items:
+                    type: string
+            continueOnFailure:
+              type: boolean
+            scriptVariables:
+              type: object
+              additionalProperties:
+                type: string
+        status:
+          type: object
+          properties:
+            state:
+              type: string
+              enum:
+              - STATE_UNSPECIFIED
+              - PENDING
+              - SETUP_DONE
+              - RUNNING
+              - CANCEL_PENDING
+              - CANCEL_STARTED
+              - CANCELLED
+              - DONE
+              - ERROR
+              - ATTEMPT_FAILURE
+            stateStartTime:
+              type: string
+              format: date-time
+            details:
+              type: string
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        driverOutputResourceUri:
+          type: string
+        driverControlFilesUri:
+          type: string
+        jobUuid:
+          type: string
+    ListJobsResponse:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
+        nextPageToken:
+          type: string
+    SubmitJobRequest:
+      type: object
+      properties:
+        job:
+          $ref: '#/components/schemas/Job'
+        requestId:
+          type: string
+      required:
+      - job
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Cloud Platform
