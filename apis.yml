@@ -5,7 +5,20 @@ description: >-
   Flink, Presto, and other open-source data processing frameworks. It enables batch processing, querying, streaming, and
   machine learning use cases with cluster management that takes seconds instead of minutes, along with per-second
   billing and autoscaling capabilities.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-dataproc.png
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-dataproc/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -18,32 +31,63 @@ tags:
   - Hadoop
   - Spark
 apis:
-  - name: Cloud Dataproc API
-    description: >-
-      The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud. It provides programmatic access to
-      create, configure, and delete clusters, submit and monitor Apache Spark, Hadoop, Hive, and Pig jobs, and manage
-      workflow templates for orchestrating multi-step data processing pipelines. The API supports autoscaling policies,
-      optional components, and integration with other Google Cloud services.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://cloud.google.com/dataproc/docs
-    baseURL: https://dataproc.googleapis.com/v1
-    tags:
-      - Clusters
-      - Hadoop
-      - Jobs
-      - Spark
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/dataproc/docs/reference/rest
-      - type: OpenAPI
-        url: openapi/cloud-dataproc-openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/dataproc/docs/concepts/iam
-      - type: GettingStarted
-        url: https://cloud.google.com/dataproc/docs/quickstarts
-      - type: JSONSchema
-        url: json-schema/cluster-schema.json
+- aid: google-cloud-dataproc:google-cloud-dataproc-clusters-api
+  name: Google Cloud Dataproc Clusters API
+  description: Operations on Dataproc clusters
+  humanURL: https://cloud.google.com/dataproc/docs
+  baseURL: https://dataproc.googleapis.com/v1
+  tags:
+  - Clusters
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-dataproc-clusters-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/dataproc/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/dataproc/docs/concepts/iam
+  - type: GettingStarted
+    url: https://cloud.google.com/dataproc/docs/quickstarts
+  - type: JSONSchema
+    url: json-schema/cluster-schema.json
+- aid: google-cloud-dataproc:google-cloud-dataproc-jobs-api
+  name: Google Cloud Dataproc Jobs API
+  description: Operations on Dataproc jobs
+  humanURL: https://cloud.google.com/dataproc/docs
+  baseURL: https://dataproc.googleapis.com/v1
+  tags:
+  - Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-dataproc-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/dataproc/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/dataproc/docs/concepts/iam
+  - type: GettingStarted
+    url: https://cloud.google.com/dataproc/docs/quickstarts
+  - type: JSONSchema
+    url: json-schema/cluster-schema.json
+- aid: google-cloud-dataproc:google-cloud-dataproc-workflowtemplates-api
+  name: Google Cloud Dataproc WorkflowTemplates API
+  description: Operations on workflow templates
+  humanURL: https://cloud.google.com/dataproc/docs
+  baseURL: https://dataproc.googleapis.com/v1
+  tags:
+  - WorkflowTemplates
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-dataproc-workflowtemplates-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/dataproc/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/dataproc/docs/concepts/iam
+  - type: GettingStarted
+    url: https://cloud.google.com/dataproc/docs/quickstarts
+  - type: JSONSchema
+    url: json-schema/cluster-schema.json
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-dataproc/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-dataproc-agentic-access.yml
   - type: VulnerabilityDisclosure
