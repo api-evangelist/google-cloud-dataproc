@@ -1,0 +1,845 @@
+{
+  "info": {
+    "_postman_id": "3968e85a-3007-40fc-b98e-3aaa2478eaf7",
+    "name": "Google Cloud Dataproc Clusters API",
+    "description": "The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud Platform. It provides programmatic access to create and manage clusters, submit and monitor Apache Spark, Apache Hadoop, Apache Hive, and Apache Pig jobs, and manage workflow templates for orchestrating multi-step data processing pipelines.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:46:56.000Z",
+    "updatedAt": "2026-07-28T01:46:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3968e85a-3007-40fc-b98e-3aaa2478eaf7"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "regions",
+              "item": [
+                {
+                  "name": "{region}",
+                  "item": [
+                    {
+                      "name": "clusters",
+                      "item": [
+                        {
+                          "name": "{cluster}",
+                          "item": [
+                            {
+                              "name": "Google Cloud Dataproc Get a cluster",
+                              "id": "78551047-650d-4643-a413-1b99a0a5a212",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "https://www.googleapis.com/auth/cloud-platform",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://oauth2.googleapis.com/token",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "authUrl",
+                                      "value": "https://accounts.google.com/o/oauth2/auth",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "authorization_code",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/regions/:region/clusters/:cluster",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "regions",
+                                    ":region",
+                                    "clusters",
+                                    ":cluster"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "a25e5ed6-040c-4163-aac6-768700343d64",
+                                      "key": "project",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "b4db70b6-7225-43e1-9a1c-361cdb9f21f4",
+                                      "key": "region",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "cdb7f0b3-4101-46ab-acd5-c170281942e4",
+                                      "key": "cluster",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Gets the resource representation for a cluster in a project."
+                              },
+                              "response": [
+                                {
+                                  "id": "c7a1f04a-d757-41a3-8955-9d3ddcbe609b",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:project/regions/:region/clusters/:cluster",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":project",
+                                        "regions",
+                                        ":region",
+                                        "clusters",
+                                        ":cluster"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "project"
+                                        },
+                                        {
+                                          "key": "region"
+                                        },
+                                        {
+                                          "key": "cluster"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"projectId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"config\": {\n    \"configBucket\": \"<string>\",\n    \"tempBucket\": \"<string>\",\n    \"gceClusterConfig\": {\n      \"zoneUri\": \"<string>\",\n      \"networkUri\": \"<string>\",\n      \"subnetworkUri\": \"<string>\",\n      \"internalIpOnly\": \"<boolean>\",\n      \"serviceAccountScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"metadata\": {\n        \"labore42\": \"<string>\",\n        \"laborum58\": \"<string>\",\n        \"cupidatat_\": \"<string>\",\n        \"ut75f\": \"<string>\"\n      }\n    },\n    \"masterConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"PREEMPTIBLE\"\n    },\n    \"workerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"NON_PREEMPTIBLE\"\n    },\n    \"secondaryWorkerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"SPOT\"\n    },\n    \"softwareConfig\": {\n      \"imageVersion\": \"<string>\",\n      \"properties\": {\n        \"et_917\": \"<string>\",\n        \"ut_3\": \"<string>\"\n      },\n      \"optionalComponents\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"initializationActions\": [\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      },\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      }\n    ]\n  },\n  \"labels\": {\n    \"nisi__\": \"<string>\",\n    \"iruref\": \"<string>\"\n  },\n  \"status\": {\n    \"state\": \"STOPPED\",\n    \"stateStartTime\": \"<dateTime>\",\n    \"detail\": \"<string>\"\n  },\n  \"statusHistory\": [\n    {\n      \"state\": \"UNKNOWN\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"state\": \"RUNNING\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    }\n  ],\n  \"clusterUuid\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T01:46:57.000Z",
+                                  "updatedAt": "2026-07-28T01:46:57.000Z",
+                                  "uid": "35240-c7a1f04a-d757-41a3-8955-9d3ddcbe609b"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:46:57.000Z",
+                              "updatedAt": "2026-07-28T01:46:57.000Z",
+                              "uid": "35240-78551047-650d-4643-a413-1b99a0a5a212"
+                            },
+                            {
+                              "name": "Google Cloud Dataproc Update a cluster",
+                              "id": "81738fb1-c74d-4d51-be71-caadc74a6269",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "https://www.googleapis.com/auth/cloud-platform",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://oauth2.googleapis.com/token",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "authUrl",
+                                      "value": "https://accounts.google.com/o/oauth2/auth",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "authorization_code",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"projectId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"config\": {\n    \"configBucket\": \"<string>\",\n    \"tempBucket\": \"<string>\",\n    \"gceClusterConfig\": {\n      \"zoneUri\": \"<string>\",\n      \"networkUri\": \"<string>\",\n      \"subnetworkUri\": \"<string>\",\n      \"internalIpOnly\": \"<boolean>\",\n      \"serviceAccountScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"metadata\": {\n        \"labore42\": \"<string>\",\n        \"laborum58\": \"<string>\",\n        \"cupidatat_\": \"<string>\",\n        \"ut75f\": \"<string>\"\n      }\n    },\n    \"masterConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"PREEMPTIBLE\"\n    },\n    \"workerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"NON_PREEMPTIBLE\"\n    },\n    \"secondaryWorkerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"SPOT\"\n    },\n    \"softwareConfig\": {\n      \"imageVersion\": \"<string>\",\n      \"properties\": {\n        \"et_917\": \"<string>\",\n        \"ut_3\": \"<string>\"\n      },\n      \"optionalComponents\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"initializationActions\": [\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      },\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      }\n    ]\n  },\n  \"labels\": {\n    \"nisi__\": \"<string>\",\n    \"iruref\": \"<string>\"\n  },\n  \"status\": {\n    \"state\": \"STOPPED\",\n    \"stateStartTime\": \"<dateTime>\",\n    \"detail\": \"<string>\"\n  },\n  \"statusHistory\": [\n    {\n      \"state\": \"UNKNOWN\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"state\": \"RUNNING\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    }\n  ],\n  \"clusterUuid\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/regions/:region/clusters/:cluster?updateMask=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "regions",
+                                    ":region",
+                                    "clusters",
+                                    ":cluster"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) ",
+                                      "key": "updateMask",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "7ea6cb49-6171-493a-8372-b10c55f8c0f6",
+                                      "key": "project",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "b0ec8ae1-f4f6-4705-be29-fa133b9cfec0",
+                                      "key": "region",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "95ad117b-c401-4ed4-9555-dfc55901b4e8",
+                                      "key": "cluster",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Updates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata."
+                              },
+                              "response": [
+                                {
+                                  "id": "8f92830b-0743-4b12-aed1-ba5153b476c3",
+                                  "name": "Cluster update initiated",
+                                  "originalRequest": {
+                                    "method": "PATCH",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"projectId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"config\": {\n    \"configBucket\": \"<string>\",\n    \"tempBucket\": \"<string>\",\n    \"gceClusterConfig\": {\n      \"zoneUri\": \"<string>\",\n      \"networkUri\": \"<string>\",\n      \"subnetworkUri\": \"<string>\",\n      \"internalIpOnly\": \"<boolean>\",\n      \"serviceAccountScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"metadata\": {\n        \"labore42\": \"<string>\",\n        \"laborum58\": \"<string>\",\n        \"cupidatat_\": \"<string>\",\n        \"ut75f\": \"<string>\"\n      }\n    },\n    \"masterConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"PREEMPTIBLE\"\n    },\n    \"workerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"NON_PREEMPTIBLE\"\n    },\n    \"secondaryWorkerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"SPOT\"\n    },\n    \"softwareConfig\": {\n      \"imageVersion\": \"<string>\",\n      \"properties\": {\n        \"et_917\": \"<string>\",\n        \"ut_3\": \"<string>\"\n      },\n      \"optionalComponents\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"initializationActions\": [\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      },\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      }\n    ]\n  },\n  \"labels\": {\n    \"nisi__\": \"<string>\",\n    \"iruref\": \"<string>\"\n  },\n  \"status\": {\n    \"state\": \"STOPPED\",\n    \"stateStartTime\": \"<dateTime>\",\n    \"detail\": \"<string>\"\n  },\n  \"statusHistory\": [\n    {\n      \"state\": \"UNKNOWN\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"state\": \"RUNNING\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    }\n  ],\n  \"clusterUuid\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:project/regions/:region/clusters/:cluster?updateMask=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":project",
+                                        "regions",
+                                        ":region",
+                                        "clusters",
+                                        ":cluster"
+                                      ],
+                                      "query": [
+                                        {
+                                          "description": "(Required) ",
+                                          "key": "updateMask",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "project"
+                                        },
+                                        {
+                                          "key": "region"
+                                        },
+                                        {
+                                          "key": "cluster"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"metadata\": {},\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                                  "createdAt": "2026-07-28T01:46:57.000Z",
+                                  "updatedAt": "2026-07-28T01:46:57.000Z",
+                                  "uid": "35240-8f92830b-0743-4b12-aed1-ba5153b476c3"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:46:57.000Z",
+                              "updatedAt": "2026-07-28T01:46:57.000Z",
+                              "uid": "35240-81738fb1-c74d-4d51-be71-caadc74a6269"
+                            },
+                            {
+                              "name": "Google Cloud Dataproc Delete a cluster",
+                              "id": "7d5b533e-efa2-46c4-b822-de40e3aea0ea",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "https://www.googleapis.com/auth/cloud-platform",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://oauth2.googleapis.com/token",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "authUrl",
+                                      "value": "https://accounts.google.com/o/oauth2/auth",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "authorization_code",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/regions/:region/clusters/:cluster",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "regions",
+                                    ":region",
+                                    "clusters",
+                                    ":cluster"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "787cd793-7e3c-40f8-a451-f0814ad07dff",
+                                      "key": "project",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "8305cf34-d242-48b1-89a8-9084e3d5b439",
+                                      "key": "region",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "3c7addce-9cc6-433e-83c0-ed0871c8a264",
+                                      "key": "cluster",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Deletes a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata."
+                              },
+                              "response": [
+                                {
+                                  "id": "633e19db-0545-4ffb-9f33-d06fa7f285f8",
+                                  "name": "Cluster deletion initiated",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:project/regions/:region/clusters/:cluster",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":project",
+                                        "regions",
+                                        ":region",
+                                        "clusters",
+                                        ":cluster"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "project"
+                                        },
+                                        {
+                                          "key": "region"
+                                        },
+                                        {
+                                          "key": "cluster"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"metadata\": {},\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                                  "createdAt": "2026-07-28T01:46:57.000Z",
+                                  "updatedAt": "2026-07-28T01:46:57.000Z",
+                                  "uid": "35240-633e19db-0545-4ffb-9f33-d06fa7f285f8"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:46:57.000Z",
+                              "updatedAt": "2026-07-28T01:46:57.000Z",
+                              "uid": "35240-7d5b533e-efa2-46c4-b822-de40e3aea0ea"
+                            }
+                          ],
+                          "id": "788ec7d7-d3b9-4261-b2e8-49cd0cdfdbe9",
+                          "createdAt": "2026-07-28T01:46:57.000Z",
+                          "updatedAt": "2026-07-28T01:46:57.000Z",
+                          "uid": "35240-788ec7d7-d3b9-4261-b2e8-49cd0cdfdbe9"
+                        },
+                        {
+                          "name": "Google Cloud Dataproc List clusters",
+                          "id": "72ef0c74-a2b1-4748-9bb1-5134d1845a56",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "https://www.googleapis.com/auth/cloud-platform",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://oauth2.googleapis.com/token",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "authUrl",
+                                  "value": "https://accounts.google.com/o/oauth2/auth",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "authorization_code",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/regions/:region/clusters?filter=<string>&pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "regions",
+                                ":region",
+                                "clusters"
+                              ],
+                              "query": [
+                                {
+                                  "key": "filter",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "c38d75f5-5b52-4354-a9ce-2595637c7cfe",
+                                  "key": "project",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "a136fbad-eba1-43b6-a13c-708ff507c307",
+                                  "key": "region",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists all regions/{region}/clusters in a project."
+                          },
+                          "response": [
+                            {
+                              "id": "495408cc-8948-4484-94f4-de355a925a21",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/regions/:region/clusters?filter=<string>&pageSize=<integer>&pageToken=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "regions",
+                                    ":region",
+                                    "clusters"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "filter",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "pageSize",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "key": "pageToken",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project"
+                                    },
+                                    {
+                                      "key": "region"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"clusters\": [\n    {\n      \"projectId\": \"<string>\",\n      \"clusterName\": \"<string>\",\n      \"config\": {\n        \"configBucket\": \"<string>\",\n        \"tempBucket\": \"<string>\",\n        \"gceClusterConfig\": {\n          \"zoneUri\": \"<string>\",\n          \"networkUri\": \"<string>\",\n          \"subnetworkUri\": \"<string>\",\n          \"internalIpOnly\": \"<boolean>\",\n          \"serviceAccountScopes\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"metadata\": {\n            \"suntc\": \"<string>\",\n            \"sit_450\": \"<string>\",\n            \"Utc\": \"<string>\"\n          }\n        },\n        \"masterConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"PREEMPTIBLE\"\n        },\n        \"workerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"secondaryWorkerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"softwareConfig\": {\n          \"imageVersion\": \"<string>\",\n          \"properties\": {\n            \"non_b\": \"<string>\"\n          },\n          \"optionalComponents\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"initializationActions\": [\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          },\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          }\n        ]\n      },\n      \"labels\": {\n        \"occaecat_5\": \"<string>\",\n        \"sed36\": \"<string>\",\n        \"dolore_0\": \"<string>\"\n      },\n      \"status\": {\n        \"state\": \"RUNNING\",\n        \"stateStartTime\": \"<dateTime>\",\n        \"detail\": \"<string>\"\n      },\n      \"statusHistory\": [\n        {\n          \"state\": \"STARTING\",\n          \"stateStartTime\": \"<dateTime>\",\n          \"detail\": \"<string>\"\n        },\n        {\n          \"state\": \"RUNNING\",\n          \"stateStartTime\": \"<dateTime>\",\n          \"detail\": \"<string>\"\n        }\n      ],\n      \"clusterUuid\": \"<string>\"\n    },\n    {\n      \"projectId\": \"<string>\",\n      \"clusterName\": \"<string>\",\n      \"config\": {\n        \"configBucket\": \"<string>\",\n        \"tempBucket\": \"<string>\",\n        \"gceClusterConfig\": {\n          \"zoneUri\": \"<string>\",\n          \"networkUri\": \"<string>\",\n          \"subnetworkUri\": \"<string>\",\n          \"internalIpOnly\": \"<boolean>\",\n          \"serviceAccountScopes\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"metadata\": {\n            \"nisi4e\": \"<string>\",\n            \"dolore__\": \"<string>\",\n            \"enim_d\": \"<string>\"\n          }\n        },\n        \"masterConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"PREEMPTIBLE\"\n        },\n        \"workerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"secondaryWorkerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"PREEMPTIBLE\"\n        },\n        \"softwareConfig\": {\n          \"imageVersion\": \"<string>\",\n          \"properties\": {\n            \"occaecat_6\": \"<string>\",\n            \"eu_d\": \"<string>\"\n          },\n          \"optionalComponents\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"initializationActions\": [\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          },\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          }\n        ]\n      },\n      \"labels\": {\n        \"ut_84_\": \"<string>\",\n        \"irure_ec\": \"<string>\",\n        \"ad_c\": \"<string>\"\n      },\n      \"status\": {\n        \"state\": \"UPDATING\",\n        \"stateStartTime\": \"<dateTime>\",\n        \"detail\": \"<string>\"\n      },\n      \"statusHistory\": [\n        {\n          \"state\": \"STOPPING\",\n          \"stateStartTime\": \"<dateTime>\",\n          \"detail\": \"<string>\"\n        },\n        {\n          \"state\": \"DELETING\",\n          \"stateStartTime\": \"<dateTime>\",\n          \"detail\": \"<string>\"\n        }\n      ],\n      \"clusterUuid\": \"<string>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:46:57.000Z",
+                              "updatedAt": "2026-07-28T01:46:57.000Z",
+                              "uid": "35240-495408cc-8948-4484-94f4-de355a925a21"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:46:57.000Z",
+                          "updatedAt": "2026-07-28T01:46:57.000Z",
+                          "uid": "35240-72ef0c74-a2b1-4748-9bb1-5134d1845a56"
+                        },
+                        {
+                          "name": "Google Cloud Dataproc Create a cluster",
+                          "id": "4a0cd821-18ea-4d86-b9da-2cc8e8ae6f15",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "https://www.googleapis.com/auth/cloud-platform",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://oauth2.googleapis.com/token",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "authUrl",
+                                  "value": "https://accounts.google.com/o/oauth2/auth",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "authorization_code",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"projectId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"config\": {\n    \"configBucket\": \"<string>\",\n    \"tempBucket\": \"<string>\",\n    \"gceClusterConfig\": {\n      \"zoneUri\": \"<string>\",\n      \"networkUri\": \"<string>\",\n      \"subnetworkUri\": \"<string>\",\n      \"internalIpOnly\": \"<boolean>\",\n      \"serviceAccountScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"metadata\": {\n        \"labore42\": \"<string>\",\n        \"laborum58\": \"<string>\",\n        \"cupidatat_\": \"<string>\",\n        \"ut75f\": \"<string>\"\n      }\n    },\n    \"masterConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"PREEMPTIBLE\"\n    },\n    \"workerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"NON_PREEMPTIBLE\"\n    },\n    \"secondaryWorkerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"SPOT\"\n    },\n    \"softwareConfig\": {\n      \"imageVersion\": \"<string>\",\n      \"properties\": {\n        \"et_917\": \"<string>\",\n        \"ut_3\": \"<string>\"\n      },\n      \"optionalComponents\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"initializationActions\": [\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      },\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      }\n    ]\n  },\n  \"labels\": {\n    \"nisi__\": \"<string>\",\n    \"iruref\": \"<string>\"\n  },\n  \"status\": {\n    \"state\": \"STOPPED\",\n    \"stateStartTime\": \"<dateTime>\",\n    \"detail\": \"<string>\"\n  },\n  \"statusHistory\": [\n    {\n      \"state\": \"UNKNOWN\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"state\": \"RUNNING\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    }\n  ],\n  \"clusterUuid\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/regions/:region/clusters",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "regions",
+                                ":region",
+                                "clusters"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "5bfadd06-fe7f-4575-802e-013f9c082c32",
+                                  "key": "project",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "c031395b-8cb3-4944-8356-64c38020d8b8",
+                                  "key": "region",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates a cluster in a project. The returned Operation.metadata will be ClusterOperationMetadata."
+                          },
+                          "response": [
+                            {
+                              "id": "83437bf1-b465-47b6-ba6a-545e5a805484",
+                              "name": "Cluster creation initiated",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"projectId\": \"<string>\",\n  \"clusterName\": \"<string>\",\n  \"config\": {\n    \"configBucket\": \"<string>\",\n    \"tempBucket\": \"<string>\",\n    \"gceClusterConfig\": {\n      \"zoneUri\": \"<string>\",\n      \"networkUri\": \"<string>\",\n      \"subnetworkUri\": \"<string>\",\n      \"internalIpOnly\": \"<boolean>\",\n      \"serviceAccountScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"metadata\": {\n        \"labore42\": \"<string>\",\n        \"laborum58\": \"<string>\",\n        \"cupidatat_\": \"<string>\",\n        \"ut75f\": \"<string>\"\n      }\n    },\n    \"masterConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"PREEMPTIBLE\"\n    },\n    \"workerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"NON_PREEMPTIBLE\"\n    },\n    \"secondaryWorkerConfig\": {\n      \"numInstances\": \"<integer>\",\n      \"machineTypeUri\": \"<string>\",\n      \"diskConfig\": {\n        \"bootDiskType\": \"<string>\",\n        \"bootDiskSizeGb\": \"<integer>\",\n        \"numLocalSsds\": \"<integer>\"\n      },\n      \"imageUri\": \"<string>\",\n      \"preemptibility\": \"SPOT\"\n    },\n    \"softwareConfig\": {\n      \"imageVersion\": \"<string>\",\n      \"properties\": {\n        \"et_917\": \"<string>\",\n        \"ut_3\": \"<string>\"\n      },\n      \"optionalComponents\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"initializationActions\": [\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      },\n      {\n        \"executableFile\": \"<string>\",\n        \"executionTimeout\": \"<string>\"\n      }\n    ]\n  },\n  \"labels\": {\n    \"nisi__\": \"<string>\",\n    \"iruref\": \"<string>\"\n  },\n  \"status\": {\n    \"state\": \"STOPPED\",\n    \"stateStartTime\": \"<dateTime>\",\n    \"detail\": \"<string>\"\n  },\n  \"statusHistory\": [\n    {\n      \"state\": \"UNKNOWN\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"state\": \"RUNNING\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"detail\": \"<string>\"\n    }\n  ],\n  \"clusterUuid\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/regions/:region/clusters",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "regions",
+                                    ":region",
+                                    "clusters"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project"
+                                    },
+                                    {
+                                      "key": "region"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"metadata\": {},\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                              "createdAt": "2026-07-28T01:46:57.000Z",
+                              "updatedAt": "2026-07-28T01:46:57.000Z",
+                              "uid": "35240-83437bf1-b465-47b6-ba6a-545e5a805484"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:46:57.000Z",
+                          "updatedAt": "2026-07-28T01:46:57.000Z",
+                          "uid": "35240-4a0cd821-18ea-4d86-b9da-2cc8e8ae6f15"
+                        }
+                      ],
+                      "id": "7a9b0887-9456-460c-9c05-753ccf9b5e99",
+                      "createdAt": "2026-07-28T01:46:57.000Z",
+                      "updatedAt": "2026-07-28T01:46:57.000Z",
+                      "uid": "35240-7a9b0887-9456-460c-9c05-753ccf9b5e99"
+                    }
+                  ],
+                  "id": "b8604cf2-f648-4e36-83d5-d43e4942347b",
+                  "createdAt": "2026-07-28T01:46:57.000Z",
+                  "updatedAt": "2026-07-28T01:46:57.000Z",
+                  "uid": "35240-b8604cf2-f648-4e36-83d5-d43e4942347b"
+                }
+              ],
+              "id": "44d1b063-d55e-46da-9bcd-a5c82c002c05",
+              "createdAt": "2026-07-28T01:46:57.000Z",
+              "updatedAt": "2026-07-28T01:46:57.000Z",
+              "uid": "35240-44d1b063-d55e-46da-9bcd-a5c82c002c05"
+            }
+          ],
+          "id": "a3e9c765-b25b-4ed1-b3f6-88392498b40b",
+          "createdAt": "2026-07-28T01:46:57.000Z",
+          "updatedAt": "2026-07-28T01:46:57.000Z",
+          "uid": "35240-a3e9c765-b25b-4ed1-b3f6-88392498b40b"
+        }
+      ],
+      "id": "7884985d-3eff-4ce1-a2e5-a1854cdf47bb",
+      "createdAt": "2026-07-28T01:46:57.000Z",
+      "updatedAt": "2026-07-28T01:46:57.000Z",
+      "uid": "35240-7884985d-3eff-4ce1-a2e5-a1854cdf47bb"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://dataproc.googleapis.com/v1"
+    }
+  ]
+}

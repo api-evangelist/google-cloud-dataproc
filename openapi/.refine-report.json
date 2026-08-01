@@ -1,0 +1,18 @@
+{
+  "provider": "google-cloud-dataproc",
+  "sources": [
+    "google-cloud-dataproc-clusters-api-openapi.yml",
+    "google-cloud-dataproc-jobs-api-openapi.yml",
+    "google-cloud-dataproc-workflowtemplates-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-dataproc-clusters-api-openapi.yml",
+    "google-cloud-dataproc-jobs-api-openapi.yml",
+    "google-cloud-dataproc-workflowtemplates-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

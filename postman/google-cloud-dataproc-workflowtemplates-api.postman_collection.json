@@ -1,0 +1,369 @@
+{
+  "info": {
+    "_postman_id": "74776638-5b94-4740-ab34-223f7b3852e0",
+    "name": "Google Cloud Dataproc Clusters WorkflowTemplates API",
+    "description": "The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud Platform. It provides programmatic access to create and manage clusters, submit and monitor Apache Spark, Apache Hadoop, Apache Hive, and Apache Pig jobs, and manage workflow templates for orchestrating multi-step data processing pipelines.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:46:58.000Z",
+    "updatedAt": "2026-07-28T01:46:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-74776638-5b94-4740-ab34-223f7b3852e0"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "regions",
+              "item": [
+                {
+                  "name": "{region}",
+                  "item": [
+                    {
+                      "name": "workflowTemplates",
+                      "item": [
+                        {
+                          "name": "Google Cloud Dataproc List workflow templates",
+                          "id": "9feab3ab-b202-4bfe-9f64-8f5ed87f8cb7",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "https://www.googleapis.com/auth/cloud-platform",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://oauth2.googleapis.com/token",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "authUrl",
+                                  "value": "https://accounts.google.com/o/oauth2/auth",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "authorization_code",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/regions/:region/workflowTemplates?pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "regions",
+                                ":region",
+                                "workflowTemplates"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "8c18949a-583d-4671-b3a6-96e08a549230",
+                                  "key": "project",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "fd97868d-37e1-4ef8-8ea1-c608e53f4d44",
+                                  "key": "region",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists workflows that match the specified filter in the request."
+                          },
+                          "response": [
+                            {
+                              "id": "bb9116e8-3c0b-404b-92a9-d4ff613304ea",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/regions/:region/workflowTemplates?pageSize=<integer>&pageToken=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "regions",
+                                    ":region",
+                                    "workflowTemplates"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "pageSize",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "key": "pageToken",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project"
+                                    },
+                                    {
+                                      "key": "region"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"templates\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"version\": \"<integer>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"incididunt__87\": \"<string>\"\n      },\n      \"placement\": {\n        \"managedCluster\": {\n          \"clusterName\": \"<string>\",\n          \"config\": {\n            \"configBucket\": \"<string>\",\n            \"tempBucket\": \"<string>\",\n            \"gceClusterConfig\": {\n              \"zoneUri\": \"<string>\",\n              \"networkUri\": \"<string>\",\n              \"subnetworkUri\": \"<string>\",\n              \"internalIpOnly\": \"<boolean>\",\n              \"serviceAccountScopes\": [\n                \"<string>\",\n                \"<string>\"\n              ],\n              \"tags\": [\n                \"<string>\",\n                \"<string>\"\n              ],\n              \"metadata\": {\n                \"aliqua_2\": \"<string>\",\n                \"aliquip_27\": \"<string>\"\n              }\n            },\n            \"masterConfig\": {\n              \"numInstances\": \"<integer>\",\n              \"machineTypeUri\": \"<string>\",\n              \"diskConfig\": {\n                \"bootDiskType\": \"<string>\",\n                \"bootDiskSizeGb\": \"<integer>\",\n                \"numLocalSsds\": \"<integer>\"\n              },\n              \"imageUri\": \"<string>\",\n              \"preemptibility\": \"SPOT\"\n            },\n            \"workerConfig\": {\n              \"numInstances\": \"<integer>\",\n              \"machineTypeUri\": \"<string>\",\n              \"diskConfig\": {\n                \"bootDiskType\": \"<string>\",\n                \"bootDiskSizeGb\": \"<integer>\",\n                \"numLocalSsds\": \"<integer>\"\n              },\n              \"imageUri\": \"<string>\",\n              \"preemptibility\": \"SPOT\"\n            },\n            \"secondaryWorkerConfig\": {\n              \"numInstances\": \"<integer>\",\n              \"machineTypeUri\": \"<string>\",\n              \"diskConfig\": {\n                \"bootDiskType\": \"<string>\",\n                \"bootDiskSizeGb\": \"<integer>\",\n                \"numLocalSsds\": \"<integer>\"\n              },\n              \"imageUri\": \"<string>\",\n              \"preemptibility\": \"SPOT\"\n            },\n            \"softwareConfig\": {\n              \"imageVersion\": \"<string>\",\n              \"properties\": {\n                \"dolored9\": \"<string>\",\n                \"sintf\": \"<string>\",\n                \"cillum5\": \"<string>\",\n                \"adipisicinga\": \"<string>\",\n                \"est021\": \"<string>\"\n              },\n              \"optionalComponents\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            },\n            \"initializationActions\": [\n              {\n                \"executableFile\": \"<string>\",\n                \"executionTimeout\": \"<string>\"\n              },\n              {\n                \"executableFile\": \"<string>\",\n                \"executionTimeout\": \"<string>\"\n              }\n            ]\n          }\n        },\n        \"clusterSelector\": {\n          \"zone\": \"<string>\",\n          \"clusterLabels\": {\n            \"magna_5f6\": \"<string>\",\n            \"aliquip_92\": \"<string>\",\n            \"magna_c8a\": \"<string>\",\n            \"in4\": \"<string>\",\n            \"dolor_6\": \"<string>\"\n          }\n        }\n      },\n      \"jobs\": [\n        {\n          \"stepId\": \"<string>\",\n          \"hadoopJob\": {},\n          \"sparkJob\": {},\n          \"pysparkJob\": {},\n          \"hiveJob\": {},\n          \"pigJob\": {},\n          \"prerequisiteStepIds\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"stepId\": \"<string>\",\n          \"hadoopJob\": {},\n          \"sparkJob\": {},\n          \"pysparkJob\": {},\n          \"hiveJob\": {},\n          \"pigJob\": {},\n          \"prerequisiteStepIds\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"version\": \"<integer>\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"esse_5\": \"<string>\",\n        \"dolord85\": \"<string>\",\n        \"eiusmod_f7\": \"<string>\",\n        \"nona\": \"<string>\"\n      },\n      \"placement\": {\n        \"managedCluster\": {\n          \"clusterName\": \"<string>\",\n          \"config\": {\n            \"configBucket\": \"<string>\",\n            \"tempBucket\": \"<string>\",\n            \"gceClusterConfig\": {\n              \"zoneUri\": \"<string>\",\n              \"networkUri\": \"<string>\",\n              \"subnetworkUri\": \"<string>\",\n              \"internalIpOnly\": \"<boolean>\",\n              \"serviceAccountScopes\": [\n                \"<string>\",\n                \"<string>\"\n              ],\n              \"tags\": [\n                \"<string>\",\n                \"<string>\"\n              ],\n              \"metadata\": {\n                \"velit_0\": \"<string>\"\n              }\n            },\n            \"masterConfig\": {\n              \"numInstances\": \"<integer>\",\n              \"machineTypeUri\": \"<string>\",\n              \"diskConfig\": {\n                \"bootDiskType\": \"<string>\",\n                \"bootDiskSizeGb\": \"<integer>\",\n                \"numLocalSsds\": \"<integer>\"\n              },\n              \"imageUri\": \"<string>\",\n              \"preemptibility\": \"SPOT\"\n            },\n            \"workerConfig\": {\n              \"numInstances\": \"<integer>\",\n              \"machineTypeUri\": \"<string>\",\n              \"diskConfig\": {\n                \"bootDiskType\": \"<string>\",\n                \"bootDiskSizeGb\": \"<integer>\",\n                \"numLocalSsds\": \"<integer>\"\n              },\n              \"imageUri\": \"<string>\",\n              \"preemptibility\": \"NON_PREEMPTIBLE\"\n            },\n            \"secondaryWorkerConfig\": {\n              \"numInstances\": \"<integer>\",\n              \"machineTypeUri\": \"<string>\",\n              \"diskConfig\": {\n                \"bootDiskType\": \"<string>\",\n                \"bootDiskSizeGb\": \"<integer>\",\n                \"numLocalSsds\": \"<integer>\"\n              },\n              \"imageUri\": \"<string>\",\n              \"preemptibility\": \"PREEMPTIBILITY_UNSPECIFIED\"\n            },\n            \"softwareConfig\": {\n              \"imageVersion\": \"<string>\",\n              \"properties\": {\n                \"aute_91\": \"<string>\",\n                \"reprehenderit4\": \"<string>\"\n              },\n              \"optionalComponents\": [\n                \"<string>\",\n                \"<string>\"\n              ]\n            },\n            \"initializationActions\": [\n              {\n                \"executableFile\": \"<string>\",\n                \"executionTimeout\": \"<string>\"\n              },\n              {\n                \"executableFile\": \"<string>\",\n                \"executionTimeout\": \"<string>\"\n              }\n            ]\n          }\n        },\n        \"clusterSelector\": {\n          \"zone\": \"<string>\",\n          \"clusterLabels\": {\n            \"sunt_09\": \"<string>\",\n            \"ullamco30\": \"<string>\",\n            \"dolor7\": \"<string>\",\n            \"ad_3dc\": \"<string>\"\n          }\n        }\n      },\n      \"jobs\": [\n        {\n          \"stepId\": \"<string>\",\n          \"hadoopJob\": {},\n          \"sparkJob\": {},\n          \"pysparkJob\": {},\n          \"hiveJob\": {},\n          \"pigJob\": {},\n          \"prerequisiteStepIds\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"stepId\": \"<string>\",\n          \"hadoopJob\": {},\n          \"sparkJob\": {},\n          \"pysparkJob\": {},\n          \"hiveJob\": {},\n          \"pigJob\": {},\n          \"prerequisiteStepIds\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:46:59.000Z",
+                              "updatedAt": "2026-07-28T01:46:59.000Z",
+                              "uid": "35240-bb9116e8-3c0b-404b-92a9-d4ff613304ea"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:46:59.000Z",
+                          "updatedAt": "2026-07-28T01:46:59.000Z",
+                          "uid": "35240-9feab3ab-b202-4bfe-9f64-8f5ed87f8cb7"
+                        },
+                        {
+                          "name": "Google Cloud Dataproc Create a workflow template",
+                          "id": "608960e9-0a05-40b7-b9b1-4ba68b45ffa9",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "https://www.googleapis.com/auth/cloud-platform",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://oauth2.googleapis.com/token",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "authUrl",
+                                  "value": "https://accounts.google.com/o/oauth2/auth",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "authorization_code",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"version\": \"<integer>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"reprehenderitc4\": \"<string>\"\n  },\n  \"placement\": {\n    \"managedCluster\": {\n      \"clusterName\": \"<string>\",\n      \"config\": {\n        \"configBucket\": \"<string>\",\n        \"tempBucket\": \"<string>\",\n        \"gceClusterConfig\": {\n          \"zoneUri\": \"<string>\",\n          \"networkUri\": \"<string>\",\n          \"subnetworkUri\": \"<string>\",\n          \"internalIpOnly\": \"<boolean>\",\n          \"serviceAccountScopes\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"metadata\": {\n            \"aliqua_4\": \"<string>\"\n          }\n        },\n        \"masterConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"NON_PREEMPTIBLE\"\n        },\n        \"workerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"secondaryWorkerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"NON_PREEMPTIBLE\"\n        },\n        \"softwareConfig\": {\n          \"imageVersion\": \"<string>\",\n          \"properties\": {\n            \"nostrud_6d2\": \"<string>\"\n          },\n          \"optionalComponents\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"initializationActions\": [\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          },\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          }\n        ]\n      }\n    },\n    \"clusterSelector\": {\n      \"zone\": \"<string>\",\n      \"clusterLabels\": {\n        \"pariatur_0\": \"<string>\"\n      }\n    }\n  },\n  \"jobs\": [\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": {},\n      \"sparkJob\": {},\n      \"pysparkJob\": {},\n      \"hiveJob\": {},\n      \"pigJob\": {},\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": {},\n      \"sparkJob\": {},\n      \"pysparkJob\": {},\n      \"hiveJob\": {},\n      \"pigJob\": {},\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/regions/:region/workflowTemplates",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "regions",
+                                ":region",
+                                "workflowTemplates"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "5f0042f4-58ed-4d62-a8ee-89a56700bae2",
+                                  "key": "project",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "b57948b6-40ba-46be-a41d-4e316636e7f6",
+                                  "key": "region",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates new workflow template."
+                          },
+                          "response": [
+                            {
+                              "id": "2d0af986-c48d-4063-aa22-229deafa8117",
+                              "name": "Workflow template created",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"version\": \"<integer>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"reprehenderitc4\": \"<string>\"\n  },\n  \"placement\": {\n    \"managedCluster\": {\n      \"clusterName\": \"<string>\",\n      \"config\": {\n        \"configBucket\": \"<string>\",\n        \"tempBucket\": \"<string>\",\n        \"gceClusterConfig\": {\n          \"zoneUri\": \"<string>\",\n          \"networkUri\": \"<string>\",\n          \"subnetworkUri\": \"<string>\",\n          \"internalIpOnly\": \"<boolean>\",\n          \"serviceAccountScopes\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"metadata\": {\n            \"aliqua_4\": \"<string>\"\n          }\n        },\n        \"masterConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"NON_PREEMPTIBLE\"\n        },\n        \"workerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"secondaryWorkerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"NON_PREEMPTIBLE\"\n        },\n        \"softwareConfig\": {\n          \"imageVersion\": \"<string>\",\n          \"properties\": {\n            \"nostrud_6d2\": \"<string>\"\n          },\n          \"optionalComponents\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"initializationActions\": [\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          },\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          }\n        ]\n      }\n    },\n    \"clusterSelector\": {\n      \"zone\": \"<string>\",\n      \"clusterLabels\": {\n        \"pariatur_0\": \"<string>\"\n      }\n    }\n  },\n  \"jobs\": [\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": {},\n      \"sparkJob\": {},\n      \"pysparkJob\": {},\n      \"hiveJob\": {},\n      \"pigJob\": {},\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": {},\n      \"sparkJob\": {},\n      \"pysparkJob\": {},\n      \"hiveJob\": {},\n      \"pigJob\": {},\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/regions/:region/workflowTemplates",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "regions",
+                                    ":region",
+                                    "workflowTemplates"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project"
+                                    },
+                                    {
+                                      "key": "region"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"version\": \"<integer>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"reprehenderitc4\": \"<string>\"\n  },\n  \"placement\": {\n    \"managedCluster\": {\n      \"clusterName\": \"<string>\",\n      \"config\": {\n        \"configBucket\": \"<string>\",\n        \"tempBucket\": \"<string>\",\n        \"gceClusterConfig\": {\n          \"zoneUri\": \"<string>\",\n          \"networkUri\": \"<string>\",\n          \"subnetworkUri\": \"<string>\",\n          \"internalIpOnly\": \"<boolean>\",\n          \"serviceAccountScopes\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"metadata\": {\n            \"aliqua_4\": \"<string>\"\n          }\n        },\n        \"masterConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"NON_PREEMPTIBLE\"\n        },\n        \"workerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"secondaryWorkerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"NON_PREEMPTIBLE\"\n        },\n        \"softwareConfig\": {\n          \"imageVersion\": \"<string>\",\n          \"properties\": {\n            \"nostrud_6d2\": \"<string>\"\n          },\n          \"optionalComponents\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"initializationActions\": [\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          },\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          }\n        ]\n      }\n    },\n    \"clusterSelector\": {\n      \"zone\": \"<string>\",\n      \"clusterLabels\": {\n        \"pariatur_0\": \"<string>\"\n      }\n    }\n  },\n  \"jobs\": [\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": {},\n      \"sparkJob\": {},\n      \"pysparkJob\": {},\n      \"hiveJob\": {},\n      \"pigJob\": {},\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": {},\n      \"sparkJob\": {},\n      \"pysparkJob\": {},\n      \"hiveJob\": {},\n      \"pigJob\": {},\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:46:59.000Z",
+                              "updatedAt": "2026-07-28T01:46:59.000Z",
+                              "uid": "35240-2d0af986-c48d-4063-aa22-229deafa8117"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:46:59.000Z",
+                          "updatedAt": "2026-07-28T01:46:59.000Z",
+                          "uid": "35240-608960e9-0a05-40b7-b9b1-4ba68b45ffa9"
+                        }
+                      ],
+                      "id": "c85293ad-0dd5-45c4-a5b8-90f90ad41bb6",
+                      "createdAt": "2026-07-28T01:46:59.000Z",
+                      "updatedAt": "2026-07-28T01:46:59.000Z",
+                      "uid": "35240-c85293ad-0dd5-45c4-a5b8-90f90ad41bb6"
+                    }
+                  ],
+                  "id": "5c1c8af3-5031-4dc9-b470-d229a42b42d9",
+                  "createdAt": "2026-07-28T01:46:59.000Z",
+                  "updatedAt": "2026-07-28T01:46:59.000Z",
+                  "uid": "35240-5c1c8af3-5031-4dc9-b470-d229a42b42d9"
+                }
+              ],
+              "id": "cc70e5ca-34f0-4436-9f62-736e51d1bfc2",
+              "createdAt": "2026-07-28T01:46:59.000Z",
+              "updatedAt": "2026-07-28T01:46:59.000Z",
+              "uid": "35240-cc70e5ca-34f0-4436-9f62-736e51d1bfc2"
+            }
+          ],
+          "id": "ef1ecf01-4ab3-4957-a1a4-bf937bc636d0",
+          "createdAt": "2026-07-28T01:46:59.000Z",
+          "updatedAt": "2026-07-28T01:46:59.000Z",
+          "uid": "35240-ef1ecf01-4ab3-4957-a1a4-bf937bc636d0"
+        }
+      ],
+      "id": "dfecd435-51ba-4fde-ad1e-0a07067df618",
+      "createdAt": "2026-07-28T01:46:59.000Z",
+      "updatedAt": "2026-07-28T01:46:59.000Z",
+      "uid": "35240-dfecd435-51ba-4fde-ad1e-0a07067df618"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://dataproc.googleapis.com/v1"
+    }
+  ]
+}
