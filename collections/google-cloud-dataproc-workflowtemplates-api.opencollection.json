@@ -1,0 +1,98 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Dataproc Clusters WorkflowTemplates API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "WorkflowTemplates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Dataproc List workflow templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/workflowTemplates",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Lists workflows that match the specified filter in the request."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Dataproc Create a workflow template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dataproc.googleapis.com/v1/projects/:project/regions/:region/workflowTemplates",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "region",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates new workflow template."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

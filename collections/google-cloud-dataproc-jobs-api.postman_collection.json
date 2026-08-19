@@ -1,0 +1,805 @@
+{
+  "item": [
+    {
+      "id": "abb97a29-3caa-49d7-8e88-5196564fde9c",
+      "name": "Jobs",
+      "description": {
+        "content": "Operations on Dataproc jobs",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "842283f3-1e57-4cdf-9093-16c53985fd3b",
+          "name": "Google Cloud Dataproc List jobs",
+          "request": {
+            "name": "Google Cloud Dataproc List jobs",
+            "description": {
+              "content": "Lists regions/{region}/jobs in a project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "clusterName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "jobStateMatcher",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e908e8ed-9662-48b7-ac5f-277ac2aac969",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "clusterName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "jobStateMatcher",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobs\": [\n    {\n      \"reference\": {\n        \"projectId\": \"string\",\n        \"jobId\": \"string\"\n      },\n      \"placement\": {\n        \"clusterName\": \"string\",\n        \"clusterUuid\": \"string\"\n      },\n      \"hadoopJob\": {\n        \"mainJarFileUri\": \"string\",\n        \"mainClass\": \"string\",\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"jarFileUris\": [\n          \"string\",\n          \"string\"\n        ],\n        \"properties\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"sparkJob\": {\n        \"mainJarFileUri\": \"string\",\n        \"mainClass\": \"string\",\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"jarFileUris\": [\n          \"string\",\n          \"string\"\n        ],\n        \"properties\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\"\n        }\n      },\n      \"pysparkJob\": {\n        \"mainPythonFileUri\": \"string\",\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"pythonFileUris\": [\n          \"string\",\n          \"string\"\n        ],\n        \"properties\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\",\n          \"key_3\": \"string\",\n          \"key_4\": \"string\"\n        }\n      },\n      \"hiveJob\": {\n        \"queryFileUri\": \"string\",\n        \"queryList\": {\n          \"queries\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"continueOnFailure\": true,\n        \"scriptVariables\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"properties\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"pigJob\": {\n        \"queryFileUri\": \"string\",\n        \"queryList\": {\n          \"queries\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"continueOnFailure\": false,\n        \"scriptVariables\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"status\": {\n        \"state\": \"PENDING\",\n        \"stateStartTime\": \"2004-02-01T16:22:13.346Z\",\n        \"details\": \"string\"\n      },\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"driverOutputResourceUri\": \"string\",\n      \"driverControlFilesUri\": \"string\",\n      \"jobUuid\": \"string\"\n    },\n    {\n      \"reference\": {\n        \"projectId\": \"string\",\n        \"jobId\": \"string\"\n      },\n      \"placement\": {\n        \"clusterName\": \"string\",\n        \"clusterUuid\": \"string\"\n      },\n      \"hadoopJob\": {\n        \"mainJarFileUri\": \"string\",\n        \"mainClass\": \"string\",\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"jarFileUris\": [\n          \"string\",\n          \"string\"\n        ],\n        \"properties\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"sparkJob\": {\n        \"mainJarFileUri\": \"string\",\n        \"mainClass\": \"string\",\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"jarFileUris\": [\n          \"string\",\n          \"string\"\n        ],\n        \"properties\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"pysparkJob\": {\n        \"mainPythonFileUri\": \"string\",\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"pythonFileUris\": [\n          \"string\",\n          \"string\"\n        ],\n        \"properties\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"hiveJob\": {\n        \"queryFileUri\": \"string\",\n        \"queryList\": {\n          \"queries\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"continueOnFailure\": false,\n        \"scriptVariables\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\"\n        },\n        \"properties\": {\n          \"key_0\": \"string\"\n        }\n      },\n      \"pigJob\": {\n        \"queryFileUri\": \"string\",\n        \"queryList\": {\n          \"queries\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"continueOnFailure\": false,\n        \"scriptVariables\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        }\n      },\n      \"status\": {\n        \"state\": \"CANCEL_PENDING\",\n        \"stateStartTime\": \"1958-04-08T18:51:08.247Z\",\n        \"details\": \"string\"\n      },\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"driverOutputResourceUri\": \"string\",\n      \"driverControlFilesUri\": \"string\",\n      \"jobUuid\": \"string\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3019b8b7-4ffd-495e-ac37-d33eca4edeb6",
+          "name": "Google Cloud Dataproc Submit a job",
+          "request": {
+            "name": "Google Cloud Dataproc Submit a job",
+            "description": {
+              "content": "Submits a job to a cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "jobs:submit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"job\": {\n    \"reference\": {\n      \"projectId\": \"<string>\",\n      \"jobId\": \"<string>\"\n    },\n    \"placement\": {\n      \"clusterName\": \"<string>\",\n      \"clusterUuid\": \"<string>\"\n    },\n    \"hadoopJob\": {\n      \"mainJarFileUri\": \"<string>\",\n      \"mainClass\": \"<string>\",\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"jarFileUris\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"properties\": {\n        \"key_0\": \"<string>\"\n      }\n    },\n    \"sparkJob\": {\n      \"mainJarFileUri\": \"<string>\",\n      \"mainClass\": \"<string>\",\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"jarFileUris\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"properties\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      }\n    },\n    \"pysparkJob\": {\n      \"mainPythonFileUri\": \"<string>\",\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"pythonFileUris\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"properties\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      }\n    },\n    \"hiveJob\": {\n      \"queryFileUri\": \"<string>\",\n      \"queryList\": {\n        \"queries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"continueOnFailure\": \"<boolean>\",\n      \"scriptVariables\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"properties\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      }\n    },\n    \"pigJob\": {\n      \"queryFileUri\": \"<string>\",\n      \"queryList\": {\n        \"queries\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"continueOnFailure\": \"<boolean>\",\n      \"scriptVariables\": {\n        \"key_0\": \"<string>\"\n      }\n    },\n    \"status\": {\n      \"state\": \"<string>\",\n      \"stateStartTime\": \"<dateTime>\",\n      \"details\": \"<string>\"\n    },\n    \"labels\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"driverOutputResourceUri\": \"<string>\",\n    \"driverControlFilesUri\": \"<string>\",\n    \"jobUuid\": \"<string>\"\n  },\n  \"requestId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "30b804b5-8fd4-425d-b6d1-9c313e139f78",
+              "name": "Job submitted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "jobs:submit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"job\": {\n    \"reference\": {\n      \"projectId\": \"string\",\n      \"jobId\": \"string\"\n    },\n    \"placement\": {\n      \"clusterName\": \"string\",\n      \"clusterUuid\": \"string\"\n    },\n    \"hadoopJob\": {\n      \"mainJarFileUri\": \"string\",\n      \"mainClass\": \"string\",\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"jarFileUris\": [\n        \"string\",\n        \"string\"\n      ],\n      \"properties\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    },\n    \"sparkJob\": {\n      \"mainJarFileUri\": \"string\",\n      \"mainClass\": \"string\",\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"jarFileUris\": [\n        \"string\",\n        \"string\"\n      ],\n      \"properties\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    },\n    \"pysparkJob\": {\n      \"mainPythonFileUri\": \"string\",\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pythonFileUris\": [\n        \"string\",\n        \"string\"\n      ],\n      \"properties\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    },\n    \"hiveJob\": {\n      \"queryFileUri\": \"string\",\n      \"queryList\": {\n        \"queries\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"continueOnFailure\": true,\n      \"scriptVariables\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"properties\": {\n        \"key_0\": \"string\"\n      }\n    },\n    \"pigJob\": {\n      \"queryFileUri\": \"string\",\n      \"queryList\": {\n        \"queries\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"continueOnFailure\": true,\n      \"scriptVariables\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    },\n    \"status\": {\n      \"state\": \"CANCELLED\",\n      \"stateStartTime\": \"2007-07-17T07:29:50.056Z\",\n      \"details\": \"string\"\n    },\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    },\n    \"driverOutputResourceUri\": \"string\",\n    \"driverControlFilesUri\": \"string\",\n    \"jobUuid\": \"string\"\n  },\n  \"requestId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reference\": {\n    \"projectId\": \"string\",\n    \"jobId\": \"string\"\n  },\n  \"placement\": {\n    \"clusterName\": \"string\",\n    \"clusterUuid\": \"string\"\n  },\n  \"hadoopJob\": {\n    \"mainJarFileUri\": \"string\",\n    \"mainClass\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"jarFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"sparkJob\": {\n    \"mainJarFileUri\": \"string\",\n    \"mainClass\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"jarFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"pysparkJob\": {\n    \"mainPythonFileUri\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"pythonFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"hiveJob\": {\n    \"queryFileUri\": \"string\",\n    \"queryList\": {\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"continueOnFailure\": false,\n    \"scriptVariables\": {\n      \"key_0\": \"string\"\n    },\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\",\n      \"key_4\": \"string\"\n    }\n  },\n  \"pigJob\": {\n    \"queryFileUri\": \"string\",\n    \"queryList\": {\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"continueOnFailure\": true,\n    \"scriptVariables\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    }\n  },\n  \"status\": {\n    \"state\": \"CANCEL_STARTED\",\n    \"stateStartTime\": \"1969-01-10T06:28:58.128Z\",\n    \"details\": \"string\"\n  },\n  \"labels\": {\n    \"key_0\": \"string\"\n  },\n  \"driverOutputResourceUri\": \"string\",\n  \"driverControlFilesUri\": \"string\",\n  \"jobUuid\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "477cfd03-bb64-4d73-bfd2-6ce8a0cea353",
+          "name": "Google Cloud Dataproc Get a job",
+          "request": {
+            "name": "Google Cloud Dataproc Get a job",
+            "description": {
+              "content": "Gets the resource representation for a job in a project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "jobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "788e7ae2-aea3-4dea-a676-7f95dd1bae0a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reference\": {\n    \"projectId\": \"string\",\n    \"jobId\": \"string\"\n  },\n  \"placement\": {\n    \"clusterName\": \"string\",\n    \"clusterUuid\": \"string\"\n  },\n  \"hadoopJob\": {\n    \"mainJarFileUri\": \"string\",\n    \"mainClass\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"jarFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"sparkJob\": {\n    \"mainJarFileUri\": \"string\",\n    \"mainClass\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"jarFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"pysparkJob\": {\n    \"mainPythonFileUri\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"pythonFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"hiveJob\": {\n    \"queryFileUri\": \"string\",\n    \"queryList\": {\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"continueOnFailure\": false,\n    \"scriptVariables\": {\n      \"key_0\": \"string\"\n    },\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\",\n      \"key_4\": \"string\"\n    }\n  },\n  \"pigJob\": {\n    \"queryFileUri\": \"string\",\n    \"queryList\": {\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"continueOnFailure\": true,\n    \"scriptVariables\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    }\n  },\n  \"status\": {\n    \"state\": \"CANCEL_STARTED\",\n    \"stateStartTime\": \"1969-01-10T06:28:58.128Z\",\n    \"details\": \"string\"\n  },\n  \"labels\": {\n    \"key_0\": \"string\"\n  },\n  \"driverOutputResourceUri\": \"string\",\n  \"driverControlFilesUri\": \"string\",\n  \"jobUuid\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33de12f9-f734-490a-b5ca-828a6209b1c6",
+          "name": "Google Cloud Dataproc Delete a job",
+          "request": {
+            "name": "Google Cloud Dataproc Delete a job",
+            "description": {
+              "content": "Deletes the job from the project. After deletion, the job metadata is not retrievable.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "jobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4a906fa0-8780-4045-9698-f2f3b60c4fe1",
+              "name": "Job deleted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "jobId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29ceab2d-f85d-4bbc-9c80-792f3a18100d",
+          "name": "Google Cloud Dataproc Cancel a job",
+          "request": {
+            "name": "Google Cloud Dataproc Cancel a job",
+            "description": {
+              "content": "Starts a job cancellation request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "jobs",
+                "{{jobId}}:cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "faeb4825-532d-4fc2-982a-8a362de6c0cf",
+              "name": "Job cancellation initiated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "jobs",
+                    "{{jobId}}:cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reference\": {\n    \"projectId\": \"string\",\n    \"jobId\": \"string\"\n  },\n  \"placement\": {\n    \"clusterName\": \"string\",\n    \"clusterUuid\": \"string\"\n  },\n  \"hadoopJob\": {\n    \"mainJarFileUri\": \"string\",\n    \"mainClass\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"jarFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"sparkJob\": {\n    \"mainJarFileUri\": \"string\",\n    \"mainClass\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"jarFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\"\n    }\n  },\n  \"pysparkJob\": {\n    \"mainPythonFileUri\": \"string\",\n    \"args\": [\n      \"string\",\n      \"string\"\n    ],\n    \"pythonFileUris\": [\n      \"string\",\n      \"string\"\n    ],\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\"\n    }\n  },\n  \"hiveJob\": {\n    \"queryFileUri\": \"string\",\n    \"queryList\": {\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"continueOnFailure\": false,\n    \"scriptVariables\": {\n      \"key_0\": \"string\"\n    },\n    \"properties\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\",\n      \"key_3\": \"string\",\n      \"key_4\": \"string\"\n    }\n  },\n  \"pigJob\": {\n    \"queryFileUri\": \"string\",\n    \"queryList\": {\n      \"queries\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"continueOnFailure\": true,\n    \"scriptVariables\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\",\n      \"key_2\": \"string\"\n    }\n  },\n  \"status\": {\n    \"state\": \"CANCEL_STARTED\",\n    \"stateStartTime\": \"1969-01-10T06:28:58.128Z\",\n    \"details\": \"string\"\n  },\n  \"labels\": {\n    \"key_0\": \"string\"\n  },\n  \"driverOutputResourceUri\": \"string\",\n  \"driverControlFilesUri\": \"string\",\n  \"jobUuid\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dataproc.googleapis.com/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "jobId"
+    }
+  ],
+  "info": {
+    "_postman_id": "d92033be-bb4c-48ca-8ccd-1d77321577c8",
+    "name": "Google Cloud Dataproc Clusters Jobs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud Platform. It provides programmatic access to create and manage clusters, submit and monitor Apache Spark, Apache Hadoop, Apache Hive, and Apache Pig jobs, and manage workflow templates for orchestrating multi-step data processing pipelines.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}

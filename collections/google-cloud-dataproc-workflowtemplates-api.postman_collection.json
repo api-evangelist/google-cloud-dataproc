@@ -1,0 +1,345 @@
+{
+  "item": [
+    {
+      "id": "de63d45d-97d9-4611-ac9a-ccd6996bc8ab",
+      "name": "WorkflowTemplates",
+      "description": {
+        "content": "Operations on workflow templates",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8a1a39cd-1ca9-49db-9055-bce3f66efd33",
+          "name": "Google Cloud Dataproc List workflow templates",
+          "request": {
+            "name": "Google Cloud Dataproc List workflow templates",
+            "description": {
+              "content": "Lists workflows that match the specified filter in the request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "workflowTemplates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6c0bc9ca-aa26-45c8-9226-c7a3422d27d9",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "workflowTemplates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"templates\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"version\": 9746,\n      \"createTime\": \"1970-03-05T11:26:06.878Z\",\n      \"updateTime\": \"1979-03-30T14:44:50.959Z\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"placement\": {\n        \"managedCluster\": {\n          \"clusterName\": \"string\",\n          \"config\": {\n            \"configBucket\": \"string\",\n            \"tempBucket\": \"string\",\n            \"gceClusterConfig\": {\n              \"zoneUri\": \"string\",\n              \"networkUri\": \"string\",\n              \"subnetworkUri\": \"string\",\n              \"internalIpOnly\": false,\n              \"serviceAccountScopes\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"tags\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"metadata\": {\n                \"key_0\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_1\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            },\n            \"masterConfig\": {\n              \"numInstances\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"machineTypeUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"diskConfig\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"imageUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"preemptibility\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"workerConfig\": {\n              \"numInstances\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"machineTypeUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"diskConfig\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"imageUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"preemptibility\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"secondaryWorkerConfig\": {\n              \"numInstances\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"machineTypeUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"diskConfig\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"imageUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"preemptibility\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"softwareConfig\": {\n              \"imageVersion\": \"string\",\n              \"properties\": {\n                \"key_0\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_1\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"optionalComponents\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            },\n            \"initializationActions\": [\n              {\n                \"executableFile\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"executionTimeout\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"executableFile\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"executionTimeout\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ]\n          }\n        },\n        \"clusterSelector\": {\n          \"zone\": \"string\",\n          \"clusterLabels\": {\n            \"key_0\": \"string\"\n          }\n        }\n      },\n      \"jobs\": [\n        {\n          \"stepId\": \"string\",\n          \"hadoopJob\": {},\n          \"sparkJob\": {},\n          \"pysparkJob\": {},\n          \"hiveJob\": {},\n          \"pigJob\": {},\n          \"prerequisiteStepIds\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"stepId\": \"string\",\n          \"hadoopJob\": {},\n          \"sparkJob\": {},\n          \"pysparkJob\": {},\n          \"hiveJob\": {},\n          \"pigJob\": {},\n          \"prerequisiteStepIds\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"version\": 186,\n      \"createTime\": \"1982-11-15T08:38:16.901Z\",\n      \"updateTime\": \"1971-09-29T09:57:59.488Z\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"placement\": {\n        \"managedCluster\": {\n          \"clusterName\": \"string\",\n          \"config\": {\n            \"configBucket\": \"string\",\n            \"tempBucket\": \"string\",\n            \"gceClusterConfig\": {\n              \"zoneUri\": \"string\",\n              \"networkUri\": \"string\",\n              \"subnetworkUri\": \"string\",\n              \"internalIpOnly\": false,\n              \"serviceAccountScopes\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"tags\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ],\n              \"metadata\": {\n                \"key_0\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_1\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_2\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            },\n            \"masterConfig\": {\n              \"numInstances\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"machineTypeUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"diskConfig\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"imageUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"preemptibility\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"workerConfig\": {\n              \"numInstances\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"machineTypeUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"diskConfig\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"imageUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"preemptibility\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"secondaryWorkerConfig\": {\n              \"numInstances\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"machineTypeUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"diskConfig\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"imageUri\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"preemptibility\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            \"softwareConfig\": {\n              \"imageVersion\": \"string\",\n              \"properties\": {\n                \"key_0\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_1\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_2\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"optionalComponents\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            },\n            \"initializationActions\": [\n              {\n                \"executableFile\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"executionTimeout\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"executableFile\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"executionTimeout\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ]\n          }\n        },\n        \"clusterSelector\": {\n          \"zone\": \"string\",\n          \"clusterLabels\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          }\n        }\n      },\n      \"jobs\": [\n        {\n          \"stepId\": \"string\",\n          \"hadoopJob\": {},\n          \"sparkJob\": {},\n          \"pysparkJob\": {},\n          \"hiveJob\": {},\n          \"pigJob\": {},\n          \"prerequisiteStepIds\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"stepId\": \"string\",\n          \"hadoopJob\": {},\n          \"sparkJob\": {},\n          \"pysparkJob\": {},\n          \"hiveJob\": {},\n          \"pigJob\": {},\n          \"prerequisiteStepIds\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7f31ccc0-de34-4836-9de2-6dbbda70f94f",
+          "name": "Google Cloud Dataproc Create a workflow template",
+          "request": {
+            "name": "Google Cloud Dataproc Create a workflow template",
+            "description": {
+              "content": "Creates new workflow template.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "regions",
+                ":region",
+                "workflowTemplates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "region",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"version\": \"<integer>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"placement\": {\n    \"managedCluster\": {\n      \"clusterName\": \"<string>\",\n      \"config\": {\n        \"configBucket\": \"<string>\",\n        \"tempBucket\": \"<string>\",\n        \"gceClusterConfig\": {\n          \"zoneUri\": \"<string>\",\n          \"networkUri\": \"<string>\",\n          \"subnetworkUri\": \"<string>\",\n          \"internalIpOnly\": \"<boolean>\",\n          \"serviceAccountScopes\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"tags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"metadata\": {\n            \"key_0\": \"<string>\"\n          }\n        },\n        \"masterConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"<string>\"\n        },\n        \"workerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"<string>\"\n        },\n        \"secondaryWorkerConfig\": {\n          \"numInstances\": \"<integer>\",\n          \"machineTypeUri\": \"<string>\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"<string>\",\n            \"bootDiskSizeGb\": \"<integer>\",\n            \"numLocalSsds\": \"<integer>\"\n          },\n          \"imageUri\": \"<string>\",\n          \"preemptibility\": \"<string>\"\n        },\n        \"softwareConfig\": {\n          \"imageVersion\": \"<string>\",\n          \"properties\": {\n            \"key_0\": \"<string>\"\n          },\n          \"optionalComponents\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"initializationActions\": [\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          },\n          {\n            \"executableFile\": \"<string>\",\n            \"executionTimeout\": \"<string>\"\n          }\n        ]\n      }\n    },\n    \"clusterSelector\": {\n      \"zone\": \"<string>\",\n      \"clusterLabels\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      }\n    }\n  },\n  \"jobs\": [\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": \"<object>\",\n      \"sparkJob\": \"<object>\",\n      \"pysparkJob\": \"<object>\",\n      \"hiveJob\": \"<object>\",\n      \"pigJob\": \"<object>\",\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": \"<object>\",\n      \"sparkJob\": \"<object>\",\n      \"pysparkJob\": \"<object>\",\n      \"hiveJob\": \"<object>\",\n      \"pigJob\": \"<object>\",\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "950c8ef8-49f7-4538-8fb3-77fca1608ba5",
+              "name": "Workflow template created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "regions",
+                    ":region",
+                    "workflowTemplates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "region",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"version\": \"<integer>\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"placement\": {\n    \"managedCluster\": {\n      \"clusterName\": \"<string>\",\n      \"config\": {\n        \"configBucket\": \"string\",\n        \"tempBucket\": \"string\",\n        \"gceClusterConfig\": {\n          \"zoneUri\": \"string\",\n          \"networkUri\": \"string\",\n          \"subnetworkUri\": \"string\",\n          \"internalIpOnly\": false,\n          \"serviceAccountScopes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ],\n          \"metadata\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\",\n            \"key_2\": \"string\"\n          }\n        },\n        \"masterConfig\": {\n          \"numInstances\": 6919,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 8575,\n            \"numLocalSsds\": 7608\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"workerConfig\": {\n          \"numInstances\": 128,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 1097,\n            \"numLocalSsds\": 5361\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"PREEMPTIBLE\"\n        },\n        \"secondaryWorkerConfig\": {\n          \"numInstances\": 8601,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 3127,\n            \"numLocalSsds\": 9220\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"softwareConfig\": {\n          \"imageVersion\": \"string\",\n          \"properties\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\",\n            \"key_2\": \"string\"\n          },\n          \"optionalComponents\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"initializationActions\": [\n          {\n            \"executableFile\": \"string\",\n            \"executionTimeout\": \"string\"\n          },\n          {\n            \"executableFile\": \"string\",\n            \"executionTimeout\": \"string\"\n          }\n        ]\n      }\n    },\n    \"clusterSelector\": {\n      \"zone\": \"<string>\",\n      \"clusterLabels\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      }\n    }\n  },\n  \"jobs\": [\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": \"<object>\",\n      \"sparkJob\": \"<object>\",\n      \"pysparkJob\": \"<object>\",\n      \"hiveJob\": \"<object>\",\n      \"pigJob\": \"<object>\",\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"stepId\": \"<string>\",\n      \"hadoopJob\": \"<object>\",\n      \"sparkJob\": \"<object>\",\n      \"pysparkJob\": \"<object>\",\n      \"hiveJob\": \"<object>\",\n      \"pigJob\": \"<object>\",\n      \"prerequisiteStepIds\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"version\": 1116,\n  \"createTime\": \"1956-12-07T03:58:43.642Z\",\n  \"updateTime\": \"2011-03-03T08:59:02.937Z\",\n  \"labels\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"placement\": {\n    \"managedCluster\": {\n      \"clusterName\": \"string\",\n      \"config\": {\n        \"configBucket\": \"string\",\n        \"tempBucket\": \"string\",\n        \"gceClusterConfig\": {\n          \"zoneUri\": \"string\",\n          \"networkUri\": \"string\",\n          \"subnetworkUri\": \"string\",\n          \"internalIpOnly\": true,\n          \"serviceAccountScopes\": [\n            \"string\",\n            \"string\"\n          ],\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ],\n          \"metadata\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          }\n        },\n        \"masterConfig\": {\n          \"numInstances\": 3958,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 7848,\n            \"numLocalSsds\": 1965\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"workerConfig\": {\n          \"numInstances\": 4478,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 7651,\n            \"numLocalSsds\": 7934\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"SPOT\"\n        },\n        \"secondaryWorkerConfig\": {\n          \"numInstances\": 5735,\n          \"machineTypeUri\": \"string\",\n          \"diskConfig\": {\n            \"bootDiskType\": \"string\",\n            \"bootDiskSizeGb\": 7827,\n            \"numLocalSsds\": 1306\n          },\n          \"imageUri\": \"string\",\n          \"preemptibility\": \"NON_PREEMPTIBLE\"\n        },\n        \"softwareConfig\": {\n          \"imageVersion\": \"string\",\n          \"properties\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          },\n          \"optionalComponents\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"initializationActions\": [\n          {\n            \"executableFile\": \"string\",\n            \"executionTimeout\": \"string\"\n          },\n          {\n            \"executableFile\": \"string\",\n            \"executionTimeout\": \"string\"\n          }\n        ]\n      }\n    },\n    \"clusterSelector\": {\n      \"zone\": \"string\",\n      \"clusterLabels\": {\n        \"key_0\": \"string\"\n      }\n    }\n  },\n  \"jobs\": [\n    {\n      \"stepId\": \"string\",\n      \"hadoopJob\": {},\n      \"sparkJob\": {},\n      \"pysparkJob\": {},\n      \"hiveJob\": {},\n      \"pigJob\": {},\n      \"prerequisiteStepIds\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"stepId\": \"string\",\n      \"hadoopJob\": {},\n      \"sparkJob\": {},\n      \"pysparkJob\": {},\n      \"hiveJob\": {},\n      \"pigJob\": {},\n      \"prerequisiteStepIds\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dataproc.googleapis.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "118478f7-2159-4d22-8fa6-4f63c542a102",
+    "name": "Google Cloud Dataproc Clusters WorkflowTemplates API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud Platform. It provides programmatic access to create and manage clusters, submit and monitor Apache Spark, Apache Hadoop, Apache Hive, and Apache Pig jobs, and manage workflow templates for orchestrating multi-step data processing pipelines.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
