@@ -37,6 +37,8 @@ apis:
   humanURL: https://cloud.google.com/dataproc/docs
   baseURL: https://dataproc.googleapis.com/v1
   tags:
+  - Cluster
+  tags_raw:
   - Clusters
   properties:
   - type: OpenAPI
@@ -55,6 +57,8 @@ apis:
   humanURL: https://cloud.google.com/dataproc/docs
   baseURL: https://dataproc.googleapis.com/v1
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
