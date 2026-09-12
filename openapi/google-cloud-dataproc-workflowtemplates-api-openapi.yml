@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Google Cloud Dataproc Clusters WorkflowTemplates API
+  title: Google Cloud Dataproc Clusters Workflow Templates API
   description: The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud Platform. It provides programmatic access to create and manage clusters, submit and monitor Apache Spark, Apache Hadoop, Apache Hive, and Apache Pig jobs, and manage workflow templates for orchestrating multi-step data processing pipelines.
   version: v1
   contact:
@@ -87,6 +87,64 @@ paths:
         - https://www.googleapis.com/auth/cloud-platform
 components:
   schemas:
+    ClusterConfig:
+      type: object
+      properties:
+        configBucket:
+          type: string
+        tempBucket:
+          type: string
+        gceClusterConfig:
+          type: object
+          properties:
+            zoneUri:
+              type: string
+            networkUri:
+              type: string
+            subnetworkUri:
+              type: string
+            internalIpOnly:
+              type: boolean
+            serviceAccountScopes:
+              type: array
+              items:
+                type: string
+            tags:
+              type: array
+              items:
+                type: string
+            metadata:
+              type: object
+              additionalProperties:
+                type: string
+        masterConfig:
+          $ref: '#/components/schemas/InstanceGroupConfig'
+        workerConfig:
+          $ref: '#/components/schemas/InstanceGroupConfig'
+        secondaryWorkerConfig:
+          $ref: '#/components/schemas/InstanceGroupConfig'
+        softwareConfig:
+          type: object
+          properties:
+            imageVersion:
+              type: string
+            properties:
+              type: object
+              additionalProperties:
+                type: string
+            optionalComponents:
+              type: array
+              items:
+                type: string
+        initializationActions:
+          type: array
+          items:
+            type: object
+            properties:
+              executableFile:
+                type: string
+              executionTimeout:
+                type: string
     WorkflowTemplate:
       type: object
       properties:
@@ -146,64 +204,6 @@ components:
                 type: array
                 items:
                   type: string
-    ClusterConfig:
-      type: object
-      properties:
-        configBucket:
-          type: string
-        tempBucket:
-          type: string
-        gceClusterConfig:
-          type: object
-          properties:
-            zoneUri:
-              type: string
-            networkUri:
-              type: string
-            subnetworkUri:
-              type: string
-            internalIpOnly:
-              type: boolean
-            serviceAccountScopes:
-              type: array
-              items:
-                type: string
-            tags:
-              type: array
-              items:
-                type: string
-            metadata:
-              type: object
-              additionalProperties:
-                type: string
-        masterConfig:
-          $ref: '#/components/schemas/InstanceGroupConfig'
-        workerConfig:
-          $ref: '#/components/schemas/InstanceGroupConfig'
-        secondaryWorkerConfig:
-          $ref: '#/components/schemas/InstanceGroupConfig'
-        softwareConfig:
-          type: object
-          properties:
-            imageVersion:
-              type: string
-            properties:
-              type: object
-              additionalProperties:
-                type: string
-            optionalComponents:
-              type: array
-              items:
-                type: string
-        initializationActions:
-          type: array
-          items:
-            type: object
-            properties:
-              executableFile:
-                type: string
-              executionTimeout:
-                type: string
     ListWorkflowTemplatesResponse:
       type: object
       properties:

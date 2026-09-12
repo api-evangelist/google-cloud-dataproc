@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Google Cloud Dataproc Clusters API
   description: The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud Platform. It provides programmatic access to create and manage clusters, submit and monitor Apache Spark, Apache Hadoop, Apache Hive, and Apache Pig jobs, and manage workflow templates for orchestrating multi-step data processing pipelines.
@@ -199,77 +199,6 @@ paths:
         - https://www.googleapis.com/auth/cloud-platform
 components:
   schemas:
-    ListClustersResponse:
-      type: object
-      properties:
-        clusters:
-          type: array
-          items:
-            $ref: '#/components/schemas/Cluster'
-        nextPageToken:
-          type: string
-    Cluster:
-      type: object
-      properties:
-        projectId:
-          type: string
-        clusterName:
-          type: string
-          description: The cluster name, unique within a project.
-        config:
-          $ref: '#/components/schemas/ClusterConfig'
-        labels:
-          type: object
-          additionalProperties:
-            type: string
-        status:
-          $ref: '#/components/schemas/ClusterStatus'
-        statusHistory:
-          type: array
-          items:
-            $ref: '#/components/schemas/ClusterStatus'
-        clusterUuid:
-          type: string
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
-        metadata:
-          type: object
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
-        response:
-          type: object
-    ClusterStatus:
-      type: object
-      properties:
-        state:
-          type: string
-          enum:
-          - UNKNOWN
-          - CREATING
-          - RUNNING
-          - ERROR
-          - ERROR_DUE_TO_UPDATE
-          - DELETING
-          - UPDATING
-          - STOPPING
-          - STOPPED
-          - STARTING
-          - REPAIRING
-        stateStartTime:
-          type: string
-          format: date-time
-        detail:
-          type: string
     ClusterConfig:
       type: object
       properties:
@@ -328,6 +257,77 @@ components:
                 type: string
               executionTimeout:
                 type: string
+    Cluster:
+      type: object
+      properties:
+        projectId:
+          type: string
+        clusterName:
+          type: string
+          description: The cluster name, unique within a project.
+        config:
+          $ref: '#/components/schemas/ClusterConfig'
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        status:
+          $ref: '#/components/schemas/ClusterStatus'
+        statusHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClusterStatus'
+        clusterUuid:
+          type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        metadata:
+          type: object
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+        response:
+          type: object
+    ListClustersResponse:
+      type: object
+      properties:
+        clusters:
+          type: array
+          items:
+            $ref: '#/components/schemas/Cluster'
+        nextPageToken:
+          type: string
+    ClusterStatus:
+      type: object
+      properties:
+        state:
+          type: string
+          enum:
+          - UNKNOWN
+          - CREATING
+          - RUNNING
+          - ERROR
+          - ERROR_DUE_TO_UPDATE
+          - DELETING
+          - UPDATING
+          - STOPPING
+          - STOPPED
+          - STARTING
+          - REPAIRING
+        stateStartTime:
+          type: string
+          format: date-time
+        detail:
+          type: string
     InstanceGroupConfig:
       type: object
       properties:
