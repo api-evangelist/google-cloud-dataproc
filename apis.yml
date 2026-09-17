@@ -83,16 +83,16 @@ apis:
     url: https://cloud.google.com/dataproc/docs/quickstarts
   - type: JSONSchema
     url: json-schema/cluster-schema.json
-- aid: google-cloud-dataproc:google-cloud-dataproc-workflowtemplates-api
-  name: Google Cloud Dataproc WorkflowTemplates API
+- aid: google-cloud-dataproc:google-cloud-dataproc-workflow-templates-api
+  name: Google Cloud Dataproc Workflow Templates API
   description: Operations on workflow templates
   humanURL: https://cloud.google.com/dataproc/docs
   baseURL: https://dataproc.googleapis.com/v1
   tags:
-  - WorkflowTemplates
+  - Workflow Templates
   properties:
   - type: OpenAPI
-    url: openapi/google-cloud-dataproc-workflowtemplates-api-openapi.yml
+    url: openapi/google-cloud-dataproc-workflow-templates-api-openapi.yml
   - type: Documentation
     url: https://cloud.google.com/dataproc/docs/reference/rest
   - type: Authentication
