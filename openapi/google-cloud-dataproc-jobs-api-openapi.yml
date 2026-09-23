@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Dataproc Clusters Jobs API
+  title: Google Cloud Dataproc Jobs API
   description: The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud Platform. It provides programmatic access to create and manage clusters, submit and monitor Apache Spark, Apache Hadoop, Apache Hive, and Apache Pig jobs, and manage workflow templates for orchestrating multi-step data processing pipelines.
   version: v1
   contact:
@@ -203,15 +203,6 @@ components:
           type: string
       required:
       - job
-    ListJobsResponse:
-      type: object
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/Job'
-        nextPageToken:
-          type: string
     Job:
       type: object
       properties:
@@ -354,6 +345,15 @@ components:
         driverControlFilesUri:
           type: string
         jobUuid:
+          type: string
+    ListJobsResponse:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
+        nextPageToken:
           type: string
   securitySchemes:
     oauth2:

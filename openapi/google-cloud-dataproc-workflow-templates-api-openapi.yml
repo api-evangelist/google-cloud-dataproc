@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Dataproc Clusters Workflow Templates API
+  title: Google Cloud Dataproc Workflow Templates API
   description: The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud Platform. It provides programmatic access to create and manage clusters, submit and monitor Apache Spark, Apache Hadoop, Apache Hive, and Apache Pig jobs, and manage workflow templates for orchestrating multi-step data processing pipelines.
   version: v1
   contact:
@@ -13,13 +13,13 @@ servers:
 - url: https://dataproc.googleapis.com/v1
   description: Cloud Dataproc API v1
 tags:
-- name: WorkflowTemplates
+- name: Workflow Templates
   description: Operations on workflow templates
 paths:
   /projects/{project}/regions/{region}/workflowTemplates:
     get:
       tags:
-      - WorkflowTemplates
+      - Workflow Templates
       summary: Google Cloud Dataproc List workflow templates
       description: Lists workflows that match the specified filter in the request.
       operationId: listWorkflowTemplates
@@ -54,7 +54,7 @@ paths:
         - https://www.googleapis.com/auth/cloud-platform
     post:
       tags:
-      - WorkflowTemplates
+      - Workflow Templates
       summary: Google Cloud Dataproc Create a workflow template
       description: Creates new workflow template.
       operationId: createWorkflowTemplate
