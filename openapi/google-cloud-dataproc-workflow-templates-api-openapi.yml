@@ -87,31 +87,6 @@ paths:
         - https://www.googleapis.com/auth/cloud-platform
 components:
   schemas:
-    InstanceGroupConfig:
-      type: object
-      properties:
-        numInstances:
-          type: integer
-        machineTypeUri:
-          type: string
-        diskConfig:
-          type: object
-          properties:
-            bootDiskType:
-              type: string
-            bootDiskSizeGb:
-              type: integer
-            numLocalSsds:
-              type: integer
-        imageUri:
-          type: string
-        preemptibility:
-          type: string
-          enum:
-          - PREEMPTIBILITY_UNSPECIFIED
-          - NON_PREEMPTIBLE
-          - PREEMPTIBLE
-          - SPOT
     ClusterConfig:
       type: object
       properties:
@@ -170,15 +145,31 @@ components:
                 type: string
               executionTimeout:
                 type: string
-    ListWorkflowTemplatesResponse:
+    InstanceGroupConfig:
       type: object
       properties:
-        templates:
-          type: array
-          items:
-            $ref: '#/components/schemas/WorkflowTemplate'
-        nextPageToken:
+        numInstances:
+          type: integer
+        machineTypeUri:
           type: string
+        diskConfig:
+          type: object
+          properties:
+            bootDiskType:
+              type: string
+            bootDiskSizeGb:
+              type: integer
+            numLocalSsds:
+              type: integer
+        imageUri:
+          type: string
+        preemptibility:
+          type: string
+          enum:
+          - PREEMPTIBILITY_UNSPECIFIED
+          - NON_PREEMPTIBLE
+          - PREEMPTIBLE
+          - SPOT
     WorkflowTemplate:
       type: object
       properties:
@@ -238,6 +229,15 @@ components:
                 type: array
                 items:
                   type: string
+    ListWorkflowTemplatesResponse:
+      type: object
+      properties:
+        templates:
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkflowTemplate'
+        nextPageToken:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

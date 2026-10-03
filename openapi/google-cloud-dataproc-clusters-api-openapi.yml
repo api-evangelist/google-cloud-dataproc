@@ -282,28 +282,6 @@ components:
           - NON_PREEMPTIBLE
           - PREEMPTIBLE
           - SPOT
-    Cluster:
-      type: object
-      properties:
-        projectId:
-          type: string
-        clusterName:
-          type: string
-          description: The cluster name, unique within a project.
-        config:
-          $ref: '#/components/schemas/ClusterConfig'
-        labels:
-          type: object
-          additionalProperties:
-            type: string
-        status:
-          $ref: '#/components/schemas/ClusterStatus'
-        statusHistory:
-          type: array
-          items:
-            $ref: '#/components/schemas/ClusterStatus'
-        clusterUuid:
-          type: string
     Operation:
       type: object
       properties:
@@ -352,6 +330,28 @@ components:
           items:
             $ref: '#/components/schemas/Cluster'
         nextPageToken:
+          type: string
+    Cluster:
+      type: object
+      properties:
+        projectId:
+          type: string
+        clusterName:
+          type: string
+          description: The cluster name, unique within a project.
+        config:
+          $ref: '#/components/schemas/ClusterConfig'
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        status:
+          $ref: '#/components/schemas/ClusterStatus'
+        statusHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClusterStatus'
+        clusterUuid:
           type: string
   securitySchemes:
     oauth2:
