@@ -145,31 +145,6 @@ components:
                 type: string
               executionTimeout:
                 type: string
-    InstanceGroupConfig:
-      type: object
-      properties:
-        numInstances:
-          type: integer
-        machineTypeUri:
-          type: string
-        diskConfig:
-          type: object
-          properties:
-            bootDiskType:
-              type: string
-            bootDiskSizeGb:
-              type: integer
-            numLocalSsds:
-              type: integer
-        imageUri:
-          type: string
-        preemptibility:
-          type: string
-          enum:
-          - PREEMPTIBILITY_UNSPECIFIED
-          - NON_PREEMPTIBLE
-          - PREEMPTIBLE
-          - SPOT
     WorkflowTemplate:
       type: object
       properties:
@@ -238,6 +213,31 @@ components:
             $ref: '#/components/schemas/WorkflowTemplate'
         nextPageToken:
           type: string
+    InstanceGroupConfig:
+      type: object
+      properties:
+        numInstances:
+          type: integer
+        machineTypeUri:
+          type: string
+        diskConfig:
+          type: object
+          properties:
+            bootDiskType:
+              type: string
+            bootDiskSizeGb:
+              type: integer
+            numLocalSsds:
+              type: integer
+        imageUri:
+          type: string
+        preemptibility:
+          type: string
+          enum:
+          - PREEMPTIBILITY_UNSPECIFIED
+          - NON_PREEMPTIBLE
+          - PREEMPTIBLE
+          - SPOT
   securitySchemes:
     oauth2:
       type: oauth2

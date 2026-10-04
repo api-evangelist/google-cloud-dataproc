@@ -89,8 +89,6 @@ apis:
   humanURL: https://cloud.google.com/dataproc/docs
   baseURL: https://dataproc.googleapis.com/v1
   tags:
-  - WorkflowTemplates
-  tags_raw:
   - Workflow Templates
   properties:
   - type: OpenAPI
