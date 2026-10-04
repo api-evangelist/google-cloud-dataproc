@@ -89,6 +89,8 @@ apis:
   humanURL: https://cloud.google.com/dataproc/docs
   baseURL: https://dataproc.googleapis.com/v1
   tags:
+  - WorkflowTemplates
+  tags_raw:
   - Workflow Templates
   properties:
   - type: OpenAPI
@@ -102,6 +104,9 @@ apis:
   - type: JSONSchema
     url: json-schema/cluster-schema.json
 common:
+  - type: CapabilityMap
+    url: capabilities/google-cloud-dataproc-capability-edges.yml
+    name: Google Cloud Dataproc Business Capability Map
   - type: Website
     url: https://www.google.com/
   - type: PostmanWorkspace
