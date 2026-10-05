@@ -1,0 +1,25 @@
+slug: google-cloud-dataproc
+provider: Google Cloud Dataproc
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Clusters
+  spec_file: google-cloud-dataproc-clusters-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.75
+  evidence: 'createCluster  Google Cloud Dataproc Create a cluster; schemas: ClusterConfig, InstanceGroupConfig,
+    ClusterStatus'
+  reason: Operations provision and manage compute clusters (instance group configs, cluster status), which
+    is cloud compute infrastructure management.
