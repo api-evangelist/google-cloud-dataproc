@@ -199,6 +199,68 @@ paths:
         - https://www.googleapis.com/auth/cloud-platform
 components:
   schemas:
+    Cluster:
+      type: object
+      properties:
+        projectId:
+          type: string
+        clusterName:
+          type: string
+          description: The cluster name, unique within a project.
+        config:
+          $ref: '#/components/schemas/ClusterConfig'
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        status:
+          $ref: '#/components/schemas/ClusterStatus'
+        statusHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClusterStatus'
+        clusterUuid:
+          type: string
+    ClusterStatus:
+      type: object
+      properties:
+        state:
+          type: string
+          enum:
+          - UNKNOWN
+          - CREATING
+          - RUNNING
+          - ERROR
+          - ERROR_DUE_TO_UPDATE
+          - DELETING
+          - UPDATING
+          - STOPPING
+          - STOPPED
+          - STARTING
+          - REPAIRING
+        stateStartTime:
+          type: string
+          format: date-time
+        detail:
+          type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        metadata:
+          type: object
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+        response:
+          type: object
     ClusterConfig:
       type: object
       properties:
@@ -257,28 +319,6 @@ components:
                 type: string
               executionTimeout:
                 type: string
-    Cluster:
-      type: object
-      properties:
-        projectId:
-          type: string
-        clusterName:
-          type: string
-          description: The cluster name, unique within a project.
-        config:
-          $ref: '#/components/schemas/ClusterConfig'
-        labels:
-          type: object
-          additionalProperties:
-            type: string
-        status:
-          $ref: '#/components/schemas/ClusterStatus'
-        statusHistory:
-          type: array
-          items:
-            $ref: '#/components/schemas/ClusterStatus'
-        clusterUuid:
-          type: string
     ListClustersResponse:
       type: object
       properties:
@@ -288,24 +328,6 @@ components:
             $ref: '#/components/schemas/Cluster'
         nextPageToken:
           type: string
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
-        metadata:
-          type: object
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
-        response:
-          type: object
     InstanceGroupConfig:
       type: object
       properties:
@@ -331,28 +353,6 @@ components:
           - NON_PREEMPTIBLE
           - PREEMPTIBLE
           - SPOT
-    ClusterStatus:
-      type: object
-      properties:
-        state:
-          type: string
-          enum:
-          - UNKNOWN
-          - CREATING
-          - RUNNING
-          - ERROR
-          - ERROR_DUE_TO_UPDATE
-          - DELETING
-          - UPDATING
-          - STOPPING
-          - STOPPED
-          - STARTING
-          - REPAIRING
-        stateStartTime:
-          type: string
-          format: date-time
-        detail:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2

@@ -194,15 +194,6 @@ paths:
         - https://www.googleapis.com/auth/cloud-platform
 components:
   schemas:
-    ListJobsResponse:
-      type: object
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/Job'
-        nextPageToken:
-          type: string
     Job:
       type: object
       properties:
@@ -355,6 +346,15 @@ components:
           type: string
       required:
       - job
+    ListJobsResponse:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
+        nextPageToken:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

@@ -87,6 +87,15 @@ paths:
         - https://www.googleapis.com/auth/cloud-platform
 components:
   schemas:
+    ListWorkflowTemplatesResponse:
+      type: object
+      properties:
+        templates:
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkflowTemplate'
+        nextPageToken:
+          type: string
     ClusterConfig:
       type: object
       properties:
@@ -204,15 +213,6 @@ components:
                 type: array
                 items:
                   type: string
-    ListWorkflowTemplatesResponse:
-      type: object
-      properties:
-        templates:
-          type: array
-          items:
-            $ref: '#/components/schemas/WorkflowTemplate'
-        nextPageToken:
-          type: string
     InstanceGroupConfig:
       type: object
       properties:
