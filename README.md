@@ -1,4 +1,4 @@
-# Google Cloud Dataproc (google-cloud-dataproc)
+# Google Cloud Dataproc
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,67 +66,155 @@
 
 Google Cloud Dataproc is a fully managed and highly scalable service for running Apache Spark, Apache Hadoop, Apache Flink, Presto, and other open-source data processing frameworks. It enables batch processing, querying, streaming, and machine learning use cases with cluster management that takes seconds instead of minutes, along with per-second billing and autoscaling capabilities.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-dataproc/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-dataproc/refs/heads/main/apis.yml)
+**Areas:** Big Data · Data Processing · Google Cloud · Hadoop · Spark
 
-## Scope
+## Google Cloud Dataproc on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Cloud Dataproc is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-dataproc/](https://apis.io/providers/google-cloud-dataproc/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Big Data
-- Data Processing
-- Google Cloud
-- Hadoop
-- Spark
+- [Google Cloud Dataproc Clusters API](https://apis.io/apis/google-cloud-dataproc/google-cloud-dataproc-clusters-api/) — Operations on Dataproc clusters
+- [Google Cloud Dataproc Jobs API](https://apis.io/apis/google-cloud-dataproc/google-cloud-dataproc-jobs-api/) — Operations on Dataproc jobs
+- [Google Cloud Dataproc Workflow Templates API](https://apis.io/apis/google-cloud-dataproc/google-cloud-dataproc-workflow-templates-api/) — Operations on workflow templates
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Cloud Dataproc API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Cloud Dataproc API manages Hadoop-based clusters and jobs on Google Cloud. It provides programmatic access to create, configure, and delete clusters, submit and monitor Apache Spark, Hadoop, Hive, and Pig jobs, and manage workflow templates for orchestrating multi-step data processing pipelines. The API supports autoscaling policies, optional components, and integration with other Google Cloud services.
+- [Google Cloud Dataproc Agentic Access](https://apis.io/agentic-access/google-cloud-dataproc/google-cloud-dataproc-agentic-access/)
 
-- **Human URL:** [https://cloud.google.com/dataproc/docs](https://cloud.google.com/dataproc/docs)
-- **Base URL:** `https://dataproc.googleapis.com/v1`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Clusters
-- Hadoop
-- Jobs
-- Spark
+- [Google Cloud Dataproc Cluster](https://apis.io/schemas/google-cloud-dataproc/cluster/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://cloud.google.com/dataproc/docs/reference/rest)
-- [OpenAPI](openapi/cloud-dataproc-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/cloud-dataproc.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloud-dataproc.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://cloud.google.com/dataproc/docs/concepts/iam)
-- [Getting Started](https://cloud.google.com/dataproc/docs/quickstarts)
-- [JSON Schema](json-schema/cluster-schema.json) — [JSON Schema](https://json-schema.org/specification)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [Google Cloud Dataproc Context](https://apis.io/jsonld/google-cloud-dataproc/google-cloud-dataproc-context/)
 
-- [GitHub Organization](https://github.com/GoogleCloudDataproc)
-- [Portal](https://cloud.google.com/dataproc)
-- [Getting Started](https://cloud.google.com/dataproc/docs/quickstarts)
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [Google Cloud Dataproc API](https://apis.io/collections/google-cloud-dataproc/open-cloud-dataproc/)
+- [Google Cloud Dataproc Clusters API](https://apis.io/collections/google-cloud-dataproc/open-google-cloud-dataproc-clusters-api/)
+- [Google Cloud Dataproc Clusters Jobs API](https://apis.io/collections/google-cloud-dataproc/open-google-cloud-dataproc-jobs-api/)
+- [Google Cloud Dataproc Clusters WorkflowTemplates API](https://apis.io/collections/google-cloud-dataproc/open-google-cloud-dataproc-workflowtemplates-api/)
+- [Google Cloud Dataproc Clusters API](https://apis.io/collections/google-cloud-dataproc/postman-google-cloud-dataproc-clusters-api/)
+- [Google Cloud Dataproc Clusters Jobs API](https://apis.io/collections/google-cloud-dataproc/postman-google-cloud-dataproc-jobs-api/)
+- [Google Cloud Dataproc Clusters WorkflowTemplates API](https://apis.io/collections/google-cloud-dataproc/postman-google-cloud-dataproc-workflowtemplates-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud Dataproc — jsonschema rules](https://apis.io/rules/google-cloud-dataproc/google-cloud-dataproc-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Dataproc Authentication](https://apis.io/security/google-cloud-dataproc/google-cloud-dataproc-authentication/)
+- [Google Cloud Dataproc Domain Security](https://apis.io/security/google-cloud-dataproc/google-cloud-dataproc-domain-security/)
+- [Google Cloud Dataproc Vulnerability Disclosure](https://apis.io/security/google-cloud-dataproc/google-cloud-dataproc-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Cloud Dataproc Scopes](https://apis.io/scopes/google-cloud-dataproc/google-cloud-dataproc-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Dataproc Plans Pricing](https://apis.io/plans/google-cloud-dataproc/google-cloud-dataproc-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Dataproc Rate Limits](https://apis.io/rate-limits/google-cloud-dataproc/google-cloud-dataproc-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Dataproc Finops](https://apis.io/finops/google-cloud-dataproc/google-cloud-dataproc-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://cloud.google.com/dataproc/docs)
-- [Authentication](https://cloud.google.com/dataproc/docs/concepts/iam)
+- [Getting started](https://cloud.google.com/dataproc/docs/quickstarts)
 - [Pricing](https://cloud.google.com/dataproc/pricing)
-- [Terms of Service](https://cloud.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com/)
 - [Support](https://cloud.google.com/dataproc/docs/support)
-- [JSON-LD](json-ld/google-cloud-dataproc-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Integrations](https://cloud.google.com/marketplace)
+- [Terms of service](https://cloud.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/GoogleCloudDataproc)
+- [Status](https://status.cloud.google.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 48.0** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 58.7 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 48.8 |
+| Access clarity | 39.5 |
+
+**Agent readiness 26.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-dataproc/](https://apis.io/providers/google-cloud-dataproc/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud Dataproc: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-dataproc/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
